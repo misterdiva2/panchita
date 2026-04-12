@@ -42,7 +42,6 @@
     color: var(--text-dark);
   }
 
-  /* ── Nav ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 100;
@@ -78,22 +77,6 @@
 
   .nav-links a:hover { color: var(--gold); }
 
-  .nav-cta {
-    background: linear-gradient(135deg, var(--gold), #D4B85A) !important;
-    color: var(--deep-navy) !important;
-    padding: 10px 28px !important;
-    border-radius: 50px !important;
-    font-weight: 700 !important;
-    font-size: 0.95rem !important;
-    transition: transform 0.2s, box-shadow 0.2s !important;
-    box-shadow: 0 4px 24px rgba(201,169,78,0.3);
-  }
-
-  .nav-cta:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 8px 32px rgba(201,169,78,0.45) !important;
-  }
-
   .mobile-menu-btn {
     display: none;
     background: none; border: none;
@@ -116,7 +99,6 @@
   .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
   .mobile-menu-btn.active span:nth-child(3) { top: 9px; transform: rotate(-45deg); }
 
-  /* ── Hero (dark, centered) ── */
   .hero {
     margin-top: 72px;
     background: linear-gradient(170deg, var(--deep-navy) 0%, #1A2444 40%, #2A1A3A 100%);
@@ -213,7 +195,6 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── Sections ── */
   .section-light { background: var(--warm-white); padding: 80px 24px; }
   .section-cream { background: linear-gradient(180deg, var(--soft-cream) 0%, var(--warm-white) 100%); padding: 80px 24px; }
   .section-dark {
@@ -260,7 +241,6 @@
   .dark-body { color: rgba(255,255,255,0.75); }
   .dark-body strong { color: #fff; }
 
-  /* ── About (single column, centered intro, left-aligned story) ── */
   .about-intro {
     max-width: 780px;
     margin: 0 auto 48px;
@@ -272,7 +252,6 @@
     margin: 0 auto;
   }
 
-  /* ── Highlight box for a key line ── */
   .highlight-box {
     background: #fff;
     border-left: 4px solid var(--gold);
@@ -289,7 +268,6 @@
     color: var(--text-dark);
   }
 
-  /* ── Quote (dark) ── */
   .quote-inner {
     max-width: 780px;
     margin: 0 auto;
@@ -315,7 +293,6 @@
     text-transform: uppercase;
   }
 
-  /* ── Teach cards ── */
   .teach-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -357,7 +334,6 @@
     color: var(--text-light);
   }
 
-  /* ── Brainwaves ── */
   .bw-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -401,7 +377,6 @@
     line-height: 1.6;
   }
 
-  /* ── Books ── */
   .books-intro { max-width: 620px; margin-bottom: 48px; }
 
   .books-grid {
@@ -437,8 +412,8 @@
     fill: none;
   }
 
-  /* ── Newsletter ── */
-  .newsletter-section {
+  /* ── Get My Book section ── */
+  .book-cta-section {
     background: linear-gradient(135deg, rgba(201,169,78,0.08), rgba(201,169,78,0.03));
     border-top: 1px solid rgba(201,169,78,0.2);
     border-bottom: 1px solid rgba(201,169,78,0.2);
@@ -446,57 +421,36 @@
     text-align: center;
   }
 
-  .newsletter-inner { max-width: 560px; margin: 0 auto; }
+  .book-cta-inner { max-width: 580px; margin: 0 auto; }
 
-  .newsletter-desc {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    margin-bottom: 32px;
+  .book-cta-desc {
+    font-size: 1.2rem;
+    color: var(--text-body);
+    margin-bottom: 36px;
     line-height: 1.7;
   }
 
-  .newsletter-form {
-    display: flex;
-    gap: 12px;
-    max-width: 460px;
-    margin: 0 auto;
-  }
-
-  .newsletter-form input {
-    flex: 1;
-    padding: 16px 20px;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 50px;
-    font-size: 1rem;
-    font-family: 'Nunito Sans', sans-serif;
-    background: #fff;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .newsletter-form input:focus { border-color: var(--gold); }
-
-  .newsletter-form button {
-    padding: 16px 36px;
+  .book-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     background: linear-gradient(135deg, var(--gold), #D4B85A);
     color: var(--deep-navy);
-    border: none;
+    padding: 22px 56px;
     border-radius: 50px;
-    font-size: 1.15rem;
+    text-decoration: none;
+    font-size: 1.28rem;
     font-weight: 700;
     font-family: 'Nunito Sans', sans-serif;
-    cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 4px 24px rgba(201,169,78,0.3);
-    white-space: nowrap;
   }
 
-  .newsletter-form button:hover {
+  .book-cta-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 32px rgba(201,169,78,0.45);
   }
 
-  /* ── Footer ── */
   footer {
     background: var(--deep-navy);
     padding: 36px 24px;
@@ -516,7 +470,6 @@
 
   .footer-text a:hover { color: var(--gold); }
 
-  /* ── Scroll reveal ── */
   .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -528,7 +481,6 @@
     transform: translateY(0);
   }
 
-  /* ── Responsive ── */
   @media (max-width: 700px) {
     nav { padding: 0 24px; height: 64px; }
 
@@ -554,8 +506,6 @@
     .bw-grid { grid-template-columns: 1fr 1fr; }
     .books-grid { grid-template-columns: 1fr; }
 
-    .newsletter-form { flex-direction: column; }
-
     .section-light, .section-cream { padding: 64px 24px; }
     .section-dark { padding: 72px 24px; }
   }
@@ -571,11 +521,10 @@
 <nav id="mainNav">
   <div class="nav-logo">Gali Litton</div>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#about" onclick="closeMenu()">About</a></li>
-    <li><a href="#teach" onclick="closeMenu()">What I Teach</a></li>
-    <li><a href="#science" onclick="closeMenu()">The Science</a></li>
-    <li><a href="#books" onclick="closeMenu()">Books</a></li>
-    <li><a href="#newsletter" onclick="closeMenu()" class="nav-cta">Newsletter</a></li>
+    <li><a href="https://galilitton.com/about" target="_blank" rel="noopener" onclick="closeMenu()">About</a></li>
+    <li><a href="https://galilitton.com/books" target="_blank" rel="noopener" onclick="closeMenu()">Books</a></li>
+    <li><a href="https://galilitton.com/meditations" target="_blank" rel="noopener" onclick="closeMenu()">Meditations</a></li>
+    <li><a href="https://galilitton.com/workbooks" target="_blank" rel="noopener" onclick="closeMenu()">Workbooks</a></li>
   </ul>
   <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -585,11 +534,11 @@
 <!-- Hero -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-label">Writer &middot; Meditation Teacher &middot; Explorer of the Mind</div>
-    <h1 class="hero-title">I teach people how to use their <em>brain</em> to change their life.</h1>
-    <p class="hero-text">After 30 years of teaching meditation and manifestation, I wrote down everything that actually works. No fluff. No theory. Just the techniques that produce real results.</p>
-    <a href="#about" class="hero-btn">
-      Read My Story
+    <div class="hero-label">Writer &middot; Student of the Mind &middot; Lifelong Learner</div>
+    <h1 class="hero-title">I was stuck for years. Then I learned how my <em>brain</em> actually works.</h1>
+    <p class="hero-text">I'm not a scientist or a guru. I'm someone who got frustrated enough to start asking deeper questions, and what I found changed my life. Now I share everything I've learned so you don't have to figure it out alone.</p>
+    <a href="https://galilitton.com/the-revolutionary-science-of-manifesting" target="_blank" rel="noopener" class="hero-btn">
+      Get My Latest Book Free
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
@@ -599,21 +548,22 @@
 <section class="section-light" id="about">
   <div class="about-intro reveal">
     <div class="eyebrow">About Gali</div>
-    <h2 class="section-title">Before I wrote about changing lives, I had to change <em>mine</em>.</h2>
+    <h2 class="section-title">I did everything I was told. <em>Nothing</em> changed.</h2>
   </div>
 
   <div class="about-story reveal">
     <div class="body-text">
-      <p>I spent years struggling with self-doubt, financial pressure, and the feeling that something better existed just out of reach. My mind was full of big dreams. It was also full of fear, anxiety, and uncertainty.</p>
-      <p>Then I discovered meditation. Not the sit-still-and-hope-for-peace kind.</p>
+      <p>For years, I followed all the traditional advice. I meditated. I visualized. I journaled my goals. I practiced gratitude. I stayed positive. And still, my life felt like an uphill battle.</p>
+      <p>I struggled with self-doubt, financial pressure, and the nagging feeling that something better existed just out of reach. I watched other people attract what they wanted with what looked like zero effort. And I kept asking myself: what am I missing?</p>
+      <p>The frustration pushed me to dig deeper. I started reading academic journals, scientific studies on neuroscience, research on how the subconscious mind works. I learned that up to 95% of our daily thoughts, emotions, and decisions are driven by programming we're not even aware of. That meant I could want something with all my heart, but hidden beliefs running in the background could work against me without me knowing it.</p>
 
       <div class="highlight-box">
-        <p>A science-based practice that uses brainwave technology to physically change how your brain operates.</p>
+        <p>Each piece of research connected to the next. A clearer picture emerged. And the moment I understood how to align my thoughts, emotions, and energy with what I wanted, things started to shift.</p>
       </div>
 
-      <p>Once I learned how to access the full potential of my brain through meditation, everything shifted. The doubt quieted down. The clarity showed up. The results followed.</p>
-      <p>Over three decades, I have worked with thousands of people using these same techniques. My books come from that experience. The struggles in them are ones I have lived through. The methods are ones I still use every day.</p>
-      <p>I believe everyone has the power to create their own reality. Sometimes you just need someone to show you how.</p>
+      <p>I discovered quantum physics (something I had never studied before) and became fascinated by how energy, focus, and intention shape reality. A close friend who teaches at a university shared books with me, and we spent hours discussing how our emotional states and beliefs create self-fulfilling prophecies.</p>
+      <p>I'm not a scientist. I'm not a doctor. I'm someone who got stuck, refused to accept it, and spent years studying everything I could find about how the mind actually works. What once felt impossible began falling into place.</p>
+      <p>Now I write about what I've learned. My books exist because I know what it feels like to struggle and to wonder if success is meant for other people but not for you. Everything in them is practical, grounded in research, and based on what actually worked for me.</p>
     </div>
   </div>
 </section>
@@ -621,34 +571,34 @@
 <!-- Quote -->
 <section class="section-dark">
   <div class="quote-inner reveal">
-    <p class="quote-text">"True change happens when your thoughts, emotions, and energy point in the same direction, without resistance, fear, or self-sabotage."</p>
+    <p class="quote-text">"Manifestation is not something you acquire. It is something you activate. Everything you need is already inside you."</p>
     <p class="quote-attr">Gali Litton</p>
   </div>
 </section>
 
-<!-- What I Teach -->
-<section class="section-cream" id="teach">
+<!-- What I Learned -->
+<section class="section-cream" id="learned">
   <div class="container">
     <div class="reveal">
-      <div class="eyebrow">What I Teach</div>
-      <h2 class="section-title">Three practices that changed <em>everything</em> for me.</h2>
-      <p class="body-text" style="max-width:620px;">Most people try to change their circumstances by working harder or forcing willpower. That approach ignores how the brain actually works. Your subconscious mind runs 95% of your behavior. Unless you know how to access and reprogram it, you are working against yourself.</p>
+      <div class="eyebrow">What I Learned</div>
+      <h2 class="section-title">Three discoveries that changed <em>everything</em> for me.</h2>
+      <p class="body-text" style="max-width:640px;">Most of us try to change our circumstances by working harder or forcing willpower. I did that for years. It doesn't work because it ignores how the brain actually operates. Your subconscious mind runs 95% of your behavior. Until you learn how to access and reprogram it, you're working against yourself. Here's what I found.</p>
     </div>
     <div class="teach-grid">
       <div class="teach-card reveal">
         <div class="teach-num">01</div>
         <h3>Meditation</h3>
-        <p>I teach a science-based meditation practice using brainwave technology. Binaural beats guide your brain into specific frequencies. Theta for deep reprogramming. Delta for healing sleep. Alpha for calm focus.</p>
+        <p>I discovered a science-based approach to meditation that uses brainwave technology. Binaural beats guide your brain into specific frequencies: theta for deep reprogramming, delta for healing sleep, alpha for calm focus. No guesswork. No years of practice needed. I wish someone had told me this sooner.</p>
       </div>
       <div class="teach-card reveal">
         <div class="teach-num">02</div>
         <h3>Manifestation</h3>
-        <p>Manifestation is not wishful thinking. It is a specific mental process: get into theta state, visualize with full sensory detail, feel the emotion of the outcome as if it is already real.</p>
+        <p>I learned that manifestation is not wishful thinking. It's a specific mental process: get into theta state, visualize with full sensory detail, feel the emotion of the outcome as if it is already real. This is what the research pointed to, and it's what finally worked for me.</p>
       </div>
       <div class="teach-card reveal">
         <div class="teach-num">03</div>
         <h3>Subconscious Reprogramming</h3>
-        <p>Limiting beliefs about money, relationships, and self-worth are stored in your subconscious. Through theta meditation, you gain direct access to rewrite these programs.</p>
+        <p>The biggest discovery was this: limiting beliefs about money, relationships, and self-worth are stored in the subconscious. They run on autopilot. Through theta meditation, you can gain direct access to rewrite those programs. New beliefs, new patterns, new results.</p>
       </div>
     </div>
   </div>
@@ -659,10 +609,10 @@
   <div class="container">
     <div class="reveal">
       <div class="eyebrow">The Science</div>
-      <h2 class="section-title dark-heading">Your brain operates on <em>frequencies</em>. Here's why that matters.</h2>
+      <h2 class="section-title dark-heading">What I found when I started <em>researching</em>.</h2>
       <div class="body-text dark-body">
-        <p>Harvard neuroscientist Sara Lazar found structural brain changes in subjects who meditated 27 minutes a day for 8 weeks. Grey matter increased in areas linked to learning and memory. It decreased in areas tied to stress and anxiety. The brain physically changed.</p>
-        <p>Binaural beat technology delivers specific frequencies through headphones. Each ear receives a slightly different tone. Your brain synchronizes to the target frequency. This is how you access deep meditation states without years of practice.</p>
+        <p>When I started digging into the research, what struck me first was a Harvard study by neuroscientist Sara Lazar. She found structural brain changes in subjects who meditated 27 minutes a day for 8 weeks. Grey matter increased in areas linked to learning and memory. It decreased in areas tied to stress and anxiety. The brain physically changed. In eight weeks.</p>
+        <p>Then I learned about binaural beat technology. It delivers specific frequencies through headphones. Each ear receives a slightly different tone, and your brain synchronizes to the target frequency. This is how you can access deep meditation states without years of practice. For someone like me, who struggled to quiet my mind, this was a turning point.</p>
       </div>
     </div>
     <div class="bw-grid reveal">
@@ -695,56 +645,56 @@
   <div class="container">
     <div class="books-intro reveal">
       <div class="eyebrow">Books</div>
-      <h2 class="section-title">Practical guides from <em>real experience</em>.</h2>
-      <p class="body-text">My books are not theory. They come from decades of personal practice, teaching, and working through the same struggles my readers face. Each one gives you specific techniques you can use immediately.</p>
+      <h2 class="section-title">Everything I learned, written down so <em>you</em> can use it.</h2>
+      <p class="body-text">My books are not written from a podium. They're written from the same place you might be right now: wanting change, searching for answers, and needing something that actually works. I wrote them because I wish they had existed when I was starting out. Here's what you'll find inside.</p>
     </div>
     <div class="books-grid reveal">
       <div class="book-item">
         <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        Reprogram limiting beliefs about money and self-worth
+        How to reprogram limiting beliefs about money and self-worth
       </div>
       <div class="book-item">
         <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        Strengthen your intuition through daily practice
+        How to strengthen your intuition through daily practice
       </div>
       <div class="book-item">
         <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        Access the subconscious mind through theta meditation
+        How to access the subconscious mind through theta meditation
       </div>
       <div class="book-item">
         <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        Build a consistent meditation habit that sticks
+        How to build a consistent meditation habit that sticks
       </div>
       <div class="book-item">
         <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        Use visualization techniques that produce real results
+        Visualization techniques that produce real results
       </div>
       <div class="book-item">
         <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        Navigate financial challenges with clarity and calm
+        How to navigate financial challenges with clarity and calm
       </div>
       <div class="book-item">
         <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        Stop self-sabotage before it starts
+        How to stop self-sabotage before it starts
       </div>
       <div class="book-item">
         <div class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-        Create inner peace independent of external conditions
+        How to create inner peace independent of external conditions
       </div>
     </div>
   </div>
 </section>
 
-<!-- Newsletter -->
-<section class="newsletter-section" id="newsletter">
-  <div class="newsletter-inner reveal">
-    <div class="eyebrow">Newsletter</div>
-    <h2 class="section-title">Get a note from me <em>every week</em>.</h2>
-    <p class="newsletter-desc">Practical meditation tips, mindset shifts, and the techniques I use daily. Delivered to your inbox every Thursday.</p>
-    <div class="newsletter-form">
-      <input type="email" placeholder="Your email address" aria-label="Email address">
-      <button type="button">Sign Up</button>
-    </div>
+<!-- Get My Book -->
+<section class="book-cta-section">
+  <div class="book-cta-inner reveal">
+    <div class="eyebrow">Free Book</div>
+    <h2 class="section-title">Read my latest book for <em>free</em>.</h2>
+    <p class="book-cta-desc">I put everything I've learned about manifestation, neuroscience, and subconscious reprogramming into one book. You can read it today, completely free. Just click the button below.</p>
+    <a href="https://galilitton.com/the-revolutionary-science-of-manifesting" target="_blank" rel="noopener" class="book-cta-btn">
+      Get My Latest Book Free
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </section>
 
