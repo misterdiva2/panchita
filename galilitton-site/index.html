@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gali Litton | Writer, Meditation Teacher, Explorer of the Mind</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-purple: #1a0a2e;
+    --mid-purple: #2d1052;
+    --windsor: #4F0C8A;
+    --violet: #7A12D4;
+    --violet-bright: #9B3FE8;
+    --violet-glow: rgba(122, 18, 212, 0.15);
+    --violet-soft: rgba(122, 18, 212, 0.08);
+    --lavender: #c9a4f5;
+    --lavender-light: #e0ccf8;
+    --white: #ffffff;
+    --white-soft: rgba(255, 255, 255, 0.9);
+    --text-primary: #f0eaf8;
+    --text-secondary: rgba(240, 234, 248, 0.6);
+    --glow: rgba(155, 63, 232, 0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: var(--deep-purple);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Stars ── */
+  .stars-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .stars-layer {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-repeat: repeat;
+  }
+
+  .stars-small {
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 45%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 40% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 70%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 35%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 85% 60%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 80%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 65% 10%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 85%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 5% 55%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 78% 48%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 42% 32%, rgba(255,255,255,0.45) 0%, transparent 100%),
+      radial-gradient(1px 1px at 18% 67%, rgba(255,255,255,0.55) 0%, transparent 100%);
+    animation: twinkle1 6s ease-in-out infinite alternate;
+  }
+
+  .stars-medium {
+    background-image:
+      radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,0.8) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 60% 55%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 80% 20%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 35% 75%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 95% 45%, rgba(255,255,255,0.65) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 50% 85%, rgba(255,255,255,0.55) 0%, transparent 100%),
+      radial-gradient(2px 2px at 12% 42%, rgba(155,63,232,0.4) 0%, transparent 100%),
+      radial-gradient(2px 2px at 72% 68%, rgba(155,63,232,0.3) 0%, transparent 100%);
+    animation: twinkle2 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes twinkle1 { 0% { opacity: 0.6; } 100% { opacity: 1; } }
+  @keyframes twinkle2 { 0% { opacity: 0.5; } 50% { opacity: 0.9; } 100% { opacity: 0.7; } }
+
+  /* ── Nav ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 24px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.4s, padding 0.4s;
+  }
+
+  nav.scrolled {
+    background: rgba(26, 10, 46, 0.92);
+    backdrop-filter: blur(12px);
+    padding: 16px 48px;
+    border-bottom: 1px solid rgba(122, 18, 212, 0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: var(--lavender);
+    text-transform: uppercase;
+  }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--violet-bright); }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 28px;
+    height: 20px;
+    position: relative;
+    z-index: 110;
+  }
+
+  .mobile-menu-btn span {
+    display: block; width: 100%; height: 1.5px;
+    background: var(--lavender);
+    position: absolute; left: 0;
+    transition: all 0.3s;
+  }
+
+  .mobile-menu-btn span:nth-child(1) { top: 0; }
+  .mobile-menu-btn span:nth-child(2) { top: 9px; }
+  .mobile-menu-btn span:nth-child(3) { top: 18px; }
+  .mobile-menu-btn.active span:nth-child(1) { top: 9px; transform: rotate(45deg); }
+  .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+  .mobile-menu-btn.active span:nth-child(3) { top: 9px; transform: rotate(-45deg); }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    z-index: 1;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 100%;
+    background:
+      radial-gradient(ellipse 600px 400px at 50% 15%, rgba(122, 18, 212, 0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 300px 300px at 50% 10%, rgba(155, 63, 232, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .moon {
+    width: 60px; height: 60px;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeInDown 1.2s ease-out 0.3s forwards;
+  }
+
+  .moon svg { width: 100%; height: 100%; }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 7vw, 84px);
+    font-weight: 300;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 24px;
+    line-height: 1.1;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--lavender);
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.9s forwards;
+  }
+
+  .hero-line {
+    width: 1px; height: 80px;
+    background: linear-gradient(to bottom, var(--violet), transparent);
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1.2s forwards;
+  }
+
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  /* ── Sections ── */
+  section { position: relative; z-index: 1; padding: 100px 24px; }
+
+  .section-inner { max-width: 880px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 11px; letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--violet-bright);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 4.5vw, 48px);
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 40px;
+    line-height: 1.25;
+  }
+
+  .section-text { font-size: 16px; line-height: 1.85; color: var(--text-secondary); font-weight: 300; }
+  .section-text p + p { margin-top: 24px; }
+
+  /* ── About ── */
+  .about-section {
+    background: linear-gradient(180deg, transparent 0%, rgba(45, 16, 82, 0.3) 50%, transparent 100%);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .about-image-frame {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+  }
+
+  .about-image-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(122, 18, 212, 0.25);
+    z-index: 2;
+  }
+
+  .about-image-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--mid-purple) 0%, var(--deep-purple) 50%, #120828 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 12px;
+    color: var(--text-secondary);
+    font-size: 13px; letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .about-image-placeholder svg { opacity: 0.3; }
+
+  .about-content { padding-top: 20px; }
+
+  .about-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 300; font-style: italic;
+    color: var(--lavender-light);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    padding-left: 24px;
+    border-left: 2px solid var(--violet);
+  }
+
+  /* ── Philosophy ── */
+  .philosophy-section {
+    background: radial-gradient(ellipse 800px 400px at 30% 50%, rgba(122, 18, 212, 0.04) 0%, transparent 70%);
+  }
+
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    max-width: 1100px;
+    margin: 60px auto 0;
+  }
+
+  .philosophy-card {
+    padding: 40px 32px;
+    background: rgba(122, 18, 212, 0.04);
+    border: 1px solid rgba(122, 18, 212, 0.1);
+    transition: border-color 0.4s, background 0.4s;
+  }
+
+  .philosophy-card:hover {
+    border-color: rgba(122, 18, 212, 0.35);
+    background: rgba(122, 18, 212, 0.08);
+  }
+
+  .card-icon { width: 40px; height: 40px; margin-bottom: 28px; color: var(--violet-bright); }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .card-text { font-size: 14px; line-height: 1.8; color: var(--text-secondary); font-weight: 300; }
+
+  /* ── Science ── */
+  .science-section {
+    background: linear-gradient(180deg, transparent 0%, rgba(45, 16, 82, 0.2) 50%, transparent 100%);
+  }
+
+  .science-content { max-width: 780px; margin: 0 auto; text-align: center; }
+  .science-content .section-label,
+  .science-content .section-heading { text-align: center; }
+
+  .brainwave-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .brainwave-item {
+    text-align: center;
+    padding: 32px 16px;
+    border: 1px solid rgba(122, 18, 212, 0.1);
+    background: rgba(26, 10, 46, 0.6);
+    transition: all 0.4s;
+  }
+
+  .brainwave-item:hover {
+    border-color: rgba(155, 63, 232, 0.4);
+    transform: translateY(-4px);
+    background: rgba(79, 12, 138, 0.15);
+  }
+
+  .bw-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; color: var(--lavender);
+    margin-bottom: 4px; letter-spacing: 2px;
+  }
+
+  .bw-freq { font-size: 11px; color: var(--text-secondary); letter-spacing: 1px; margin-bottom: 16px; }
+  .bw-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
+
+  /* ── Books ── */
+  .books-section {
+    background: radial-gradient(ellipse 600px 400px at 70% 40%, rgba(122, 18, 212, 0.04) 0%, transparent 70%);
+  }
+
+  .books-content { max-width: 780px; margin: 0 auto; }
+
+  .book-topics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 48px;
+    margin-top: 40px;
+  }
+
+  .book-topic {
+    display: flex; align-items: flex-start;
+    gap: 16px; padding: 16px 0;
+    border-bottom: 1px solid rgba(122, 18, 212, 0.08);
+  }
+
+  .topic-marker {
+    width: 6px; height: 6px;
+    border: 1px solid var(--violet-bright);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .topic-label { font-size: 15px; color: var(--text-primary); font-weight: 300; }
+
+  /* ── Connect ── */
+  .connect-section {
+    text-align: center;
+    padding: 120px 24px 140px;
+    background: linear-gradient(180deg, transparent, rgba(45, 16, 82, 0.2) 50%, transparent);
+  }
+
+  .connect-inner { max-width: 600px; margin: 0 auto; }
+
+  .connect-cta {
+    display: inline-block;
+    margin-top: 48px;
+    padding: 16px 48px;
+    border: 1px solid var(--violet);
+    color: var(--lavender);
+    font-size: 12px; letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.4s;
+    background: transparent;
+  }
+
+  .connect-cta:hover {
+    background: var(--violet);
+    color: var(--white);
+  }
+
+  /* ── Footer ── */
+  footer {
+    position: relative; z-index: 1;
+    padding: 40px 48px;
+    border-top: 1px solid rgba(122, 18, 212, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-text { font-size: 12px; color: var(--text-secondary); letter-spacing: 1px; }
+
+  .footer-links { display: flex; gap: 24px; }
+
+  .footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 12px; letter-spacing: 1px;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover { color: var(--violet-bright); }
+
+  /* ── Bottom glow ── */
+  .water-glow {
+    position: relative; z-index: 1;
+    height: 200px;
+    background:
+      radial-gradient(ellipse 80% 100% at 50% 100%, rgba(122, 18, 212, 0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 50% 100%, rgba(155, 63, 232, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    margin-top: -200px;
+  }
+
+  /* ── Scroll Reveal ── */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .about-image-frame { max-width: 400px; margin: 0 auto; }
+    .philosophy-grid { grid-template-columns: 1fr; gap: 24px; }
+    .brainwave-list { grid-template-columns: 1fr 1fr; }
+    .book-topics { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    nav.scrolled { padding: 14px 24px; }
+
+    .nav-links {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(26, 10, 46, 0.97);
+      flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 32px;
+      transform: translateX(100%);
+      transition: transform 0.4s ease;
+    }
+
+    .nav-links.open { transform: translateX(0); }
+    .nav-links a { font-size: 16px; letter-spacing: 4px; }
+    .mobile-menu-btn { display: block; }
+    .brainwave-list { grid-template-columns: 1fr 1fr; gap: 16px; }
+    footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+  }
+
+  @media (max-width: 480px) {
+    .brainwave-list { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stars-container">
+  <div class="stars-layer stars-small"></div>
+  <div class="stars-layer stars-medium"></div>
+</div>
+
+<nav id="mainNav">
+  <div class="nav-logo">Gali Litton</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#philosophy" onclick="closeMenu()">Philosophy</a></li>
+    <li><a href="#science" onclick="closeMenu()">The Science</a></li>
+    <li><a href="#books" onclick="closeMenu()">Books</a></li>
+    <li><a href="#connect" onclick="closeMenu()">Connect</a></li>
+  </ul>
+  <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="hero">
+  <div class="moon">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 5C18.954 5 10 13.954 10 25c0 11.046 8.954 20 20 20 4.374 0 8.424-1.405 11.717-3.783C38.283 43.665 33 38.897 33 30c0-8.897 5.283-13.665 8.717-16.217C38.424 6.405 34.374 5 30 5z" fill="url(#moonGrad)" opacity="0.9"/>
+      <defs>
+        <linearGradient id="moonGrad" x1="10" y1="5" x2="45" y2="45">
+          <stop offset="0%" stop-color="#e0ccf8"/>
+          <stop offset="100%" stop-color="#9B3FE8"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <h1 class="hero-title">Gali Litton</h1>
+  <p class="hero-subtitle">Writer &middot; Meditation Teacher &middot; Explorer of the Mind</p>
+  <div class="hero-line"></div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-grid">
+    <div class="about-image-frame reveal">
+      <div class="about-image-placeholder">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1"/>
+        </svg>
+        <span>Author Photo</span>
+      </div>
+    </div>
+    <div class="about-content reveal">
+      <div class="section-label">About</div>
+      <h2 class="section-heading">Exploring the mind. Writing what I find.</h2>
+      <div class="about-quote">True change happens when your thoughts, emotions, and energy point in the same direction.</div>
+      <div class="section-text">
+        <p>I spent years struggling with self-doubt, financial pressure, and the feeling that something better existed just out of reach. That search led me to meditation, and meditation changed everything.</p>
+        <p>Over three decades of practice and teaching, I have worked with thousands of people using brainwave-based meditation techniques. The approach is grounded in neuroscience: specific sound frequencies guide your brain into theta and delta states where deep reprogramming of beliefs and habits becomes possible.</p>
+        <p>My books come from real experience. The struggles in them are ones I have lived through. The techniques are ones I use daily. Nothing theoretical. Nothing abstract. Practical steps you can apply right away.</p>
+        <p>When I am not writing, I spend my time in long meditation sessions, walking in nature, and connecting with people who are serious about understanding how their minds work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy-section" id="philosophy">
+  <div class="section-inner reveal">
+    <div class="section-label">What I Teach</div>
+    <h2 class="section-heading">Train your brain. Change your life.</h2>
+    <div class="section-text">
+      <p>Most people try to change their circumstances by working harder, thinking positively, or forcing willpower. That approach ignores how the brain actually works. Your subconscious mind runs 95% of your behavior. Unless you know how to access and reprogram it, you are fighting against yourself.</p>
+    </div>
+  </div>
+  <div class="philosophy-grid">
+    <div class="philosophy-card reveal">
+      <svg class="card-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+        <circle cx="20" cy="20" r="15"/>
+        <circle cx="20" cy="20" r="8" opacity="0.5"/>
+        <circle cx="20" cy="20" r="2"/>
+      </svg>
+      <h3 class="card-title">Meditation</h3>
+      <p class="card-text">I teach a science-based meditation practice using brainwave technology. Binaural beats guide your brain into specific frequencies. Theta for deep reprogramming. Delta for healing sleep. Alpha for calm focus. No guesswork. No years of practice needed.</p>
+    </div>
+    <div class="philosophy-card reveal">
+      <svg class="card-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M20 5L35 15v14L20 35 5 29V15z"/>
+        <path d="M20 5v30M5 15l30 14M35 15L5 29" opacity="0.3"/>
+      </svg>
+      <h3 class="card-title">Manifestation</h3>
+      <p class="card-text">Manifestation is not wishful thinking. It is a specific mental process: get into theta state, visualize with full sensory detail, feel the emotion of the outcome as if it is already real. I have spent 30 years refining this process and teaching others to use it.</p>
+    </div>
+    <div class="philosophy-card reveal">
+      <svg class="card-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M8 30C8 18 15 8 20 8s12 10 12 22" opacity="0.4"/>
+        <path d="M12 30C12 20 16 12 20 12s8 8 8 18" opacity="0.6"/>
+        <path d="M16 30c0-8 2-14 4-14s4 6 4 14"/>
+      </svg>
+      <h3 class="card-title">Subconscious Reprogramming</h3>
+      <p class="card-text">Limiting beliefs about money, relationships, and self-worth are stored in your subconscious. They run on autopilot. Through meditation in the theta state, you gain direct access to rewrite these programs. New beliefs, new patterns, new results.</p>
+    </div>
+  </div>
+</section>
+
+<section class="science-section" id="science">
+  <div class="science-content reveal">
+    <div class="section-label">The Science</div>
+    <h2 class="section-heading">Your brain operates on frequencies</h2>
+    <div class="section-text">
+      <p>Every mental state corresponds to a specific brainwave frequency. Harvard neuroscientist Sara Lazar found structural brain changes in subjects who meditated 27 minutes a day for 8 weeks. Grey matter increased in areas linked to learning and memory. It decreased in areas tied to stress and anxiety. The brain physically changed.</p>
+      <p>Binaural beat technology delivers specific frequencies through headphones. Each ear receives a slightly different tone. Your brain responds by synchronizing to the target frequency. This is how you access states that would otherwise take years of practice to reach.</p>
+    </div>
+  </div>
+  <div class="brainwave-list reveal">
+    <div class="brainwave-item">
+      <div class="bw-name">Beta</div>
+      <div class="bw-freq">13 - 30 Hz</div>
+      <div class="bw-desc">Waking state. Active thinking and concentration.</div>
+    </div>
+    <div class="brainwave-item">
+      <div class="bw-name">Alpha</div>
+      <div class="bw-freq">8 - 13 Hz</div>
+      <div class="bw-desc">Calm focus. Relaxed awareness and creativity.</div>
+    </div>
+    <div class="brainwave-item">
+      <div class="bw-name">Theta</div>
+      <div class="bw-freq">4 - 8 Hz</div>
+      <div class="bw-desc">Deep meditation. Subconscious access and reprogramming.</div>
+    </div>
+    <div class="brainwave-item">
+      <div class="bw-name">Delta</div>
+      <div class="bw-freq">0.5 - 4 Hz</div>
+      <div class="bw-desc">Deep sleep. Healing, regeneration, and restoration.</div>
+    </div>
+  </div>
+</section>
+
+<section class="books-section" id="books">
+  <div class="books-content reveal">
+    <div class="section-label">Books</div>
+    <h2 class="section-heading">Practical guides from real experience</h2>
+    <div class="section-text">
+      <p>My books are not theory. They come from decades of personal practice, teaching, and working through the same struggles my readers face. Each one gives you specific techniques you can use immediately.</p>
+    </div>
+    <div class="book-topics">
+      <div class="book-topic">
+        <div class="topic-marker"></div>
+        <span class="topic-label">Reprogram limiting beliefs about money and self-worth</span>
+      </div>
+      <div class="book-topic">
+        <div class="topic-marker"></div>
+        <span class="topic-label">Strengthen your intuition through daily practice</span>
+      </div>
+      <div class="book-topic">
+        <div class="topic-marker"></div>
+        <span class="topic-label">Access the subconscious mind through theta meditation</span>
+      </div>
+      <div class="book-topic">
+        <div class="topic-marker"></div>
+        <span class="topic-label">Build a consistent meditation habit that sticks</span>
+      </div>
+      <div class="book-topic">
+        <div class="topic-marker"></div>
+        <span class="topic-label">Use visualization techniques that produce real results</span>
+      </div>
+      <div class="book-topic">
+        <div class="topic-marker"></div>
+        <span class="topic-label">Navigate financial challenges with clarity and calm</span>
+      </div>
+      <div class="book-topic">
+        <div class="topic-marker"></div>
+        <span class="topic-label">Stop self-sabotage before it starts</span>
+      </div>
+      <div class="book-topic">
+        <div class="topic-marker"></div>
+        <span class="topic-label">Create inner peace independent of external conditions</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="connect-section" id="connect">
+  <div class="connect-inner reveal">
+    <div class="section-label">Connect</div>
+    <h2 class="section-heading">Ready to start?</h2>
+    <div class="section-text">
+      <p>Whether you are new to meditation or have been practicing for years, there is always a deeper level to reach. I would love to hear from you.</p>
+    </div>
+    <a href="mailto:hello@galilitton.com" class="connect-cta">Get in Touch</a>
+  </div>
+</section>
+
+<div class="water-glow"></div>
+
+<footer>
+  <div class="footer-text">&copy; 2026 Gali Litton. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#books">Books</a>
+    <a href="#connect">Contact</a>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => { entry.target.classList.add('visible'); }, i * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => observer.observe(el));
+
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('active');
+    navLinks.classList.toggle('open');
+  });
+  function closeMenu() {
+    menuBtn.classList.remove('active');
+    navLinks.classList.remove('open');
+  }
+</script>
+</body>
+</html>
