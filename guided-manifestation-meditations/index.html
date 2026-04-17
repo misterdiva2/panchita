@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guided Manifestation Meditations by Gali Litton</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A94E;
+  --gold-light: #E8D48B;
+  --gold-dark: #A38A2F;
+  --deep-navy: #0B1026;
+  --warm-white: #FAF7F0;
+  --soft-cream: #F5F0E3;
+  --dusty-rose: #C4828A;
+  --muted-lavender: #9B8EC4;
+  --sage: #7A9E7E;
+  --text-dark: #2A2A2A;
+  --text-body: #4A4A4A;
+  --text-light: #7A7A7A;
+  --accent-glow: rgba(201, 169, 78, 0.15);
+  --decorative-light: #E2D9C7;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+p { margin-bottom: 18px; }
+p:last-child { margin-bottom: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-body);
+  background: var(--warm-white);
+  font-size: 1.2rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-dark);
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); }
+h2 { font-size: clamp(2.1rem, 4.5vw, 2.8rem); }
+h2.large { font-size: clamp(2.1rem, 4.5vw, 3rem); }
+h3 { font-size: clamp(1.8rem, 3.5vw, 2.2rem); }
+h4 { font-size: 1.25rem; }
+
+.eyebrow {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.88rem;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.eyebrow-light { color: var(--gold); }
+.eyebrow-dark { color: var(--gold-dark); }
+
+.kicker {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--text-light);
+}
+
+/* === SECTIONS === */
+.section { padding: 80px 24px; }
+.section-dark {
+  background: linear-gradient(170deg, var(--deep-navy) 0%, #1A2444 40%, #2A1A3A 100%);
+  color: rgba(255,255,255,0.78);
+}
+.section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4 { color: #FFFFFF; }
+.section-dark .em-gold { color: var(--gold-light); font-style: italic; }
+.section-dark p { color: rgba(255,255,255,0.78); }
+.section-dark .subtle { color: rgba(255,255,255,0.5); }
+
+.section-light { background: var(--warm-white); }
+.section-cream { background: linear-gradient(180deg, var(--soft-cream) 0%, var(--warm-white) 100%); }
+
+.section-light .em-gold, .section-cream .em-gold { color: var(--gold-dark); font-style: italic; }
+
+.inner { max-width: 820px; margin: 0 auto; }
+.inner-narrow { max-width: 780px; margin: 0 auto; }
+.inner-tight { max-width: 700px; margin: 0 auto; }
+
+.text-center { text-align: center; }
+
+/* === HERO === */
+.hero {
+  padding: 100px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(201,169,78,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(155,142,196,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero .inner-narrow { position: relative; z-index: 1; }
+.hero h1 { margin-bottom: 24px; }
+.hero .subheadline {
+  font-size: 1.24rem;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 32px;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === BUTTONS === */
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), #D4B85A);
+  color: var(--deep-navy);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.18rem;
+  padding: 18px 48px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(201,169,78,0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.3px;
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(201,169,78,0.45);
+}
+.cta-btn-large {
+  padding: 22px 56px;
+  font-size: 1.28rem;
+}
+.comfort-text {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  margin-top: 12px;
+}
+.comfort-text-dark {
+  color: rgba(255,255,255,0.45);
+}
+
+/* === CTA SECTION === */
+.cta-section { padding: 48px 24px; }
+
+/* === CARDS === */
+.card-light {
+  background: #FFF;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.25s ease;
+}
+.card-light:hover { transform: translateY(-3px); }
+
+.card-dark {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+/* === LISTS === */
+.pain-list { list-style: none; }
+.pain-list li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+}
+.pain-list li::before {
+  content: '\2717';
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--dusty-rose);
+}
+
+.desire-list { list-style: none; }
+.desire-list li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+}
+.desire-list li::before {
+  content: '\2726';
+  position: absolute;
+  left: 0;
+  color: var(--sage);
+}
+
+.check-list { list-style: none; }
+.check-list li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 14px;
+  font-size: 1.12rem;
+}
+.check-list li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--sage);
+}
+
+.notfor-list { list-style: none; }
+.notfor-list li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 14px;
+  font-size: 1.12rem;
+}
+.notfor-list li::before {
+  content: '\2717';
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--dusty-rose);
+}
+
+.arrow-list { list-style: none; }
+.arrow-list li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 12px;
+  font-size: 1.12rem;
+}
+.arrow-list li::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* === HIGHLIGHT BOXES === */
+.highlight-pain {
+  background: #FFF;
+  border-left: 4px solid var(--dusty-rose);
+  border-radius: 0 12px 12px 0;
+  padding: 28px 32px;
+  margin-top: 8px;
+  margin-bottom: 28px;
+}
+.highlight-desire {
+  background: #FFF;
+  border-left: 4px solid var(--sage);
+  border-radius: 0 12px 12px 0;
+  padding: 28px 32px;
+  margin-top: 8px;
+  margin-bottom: 28px;
+}
+
+/* === GOLD CONTAINER === */
+.gold-container {
+  background: linear-gradient(135deg, rgba(201,169,78,0.08), rgba(201,169,78,0.03));
+  border: 1px solid rgba(201,169,78,0.2);
+  border-radius: 16px;
+  padding: 32px;
+  margin-top: 8px;
+}
+
+/* === GRID === */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+
+@media (max-width: 700px) {
+  .grid-3 { grid-template-columns: 1fr; }
+}
+@media (max-width: 650px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* === PRODUCT IMAGE === */
+.product-img {
+  max-width: 380px;
+  width: 100%;
+  filter: drop-shadow(0 12px 40px rgba(0,0,0,0.4));
+  margin: 0 auto;
+  display: block;
+}
+
+/* === TAGS === */
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), #D4B85A);
+  color: var(--deep-navy);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.chapter-label {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold-dark);
+}
+
+/* === STARS === */
+.stars { color: var(--gold); font-size: 1.22rem; letter-spacing: 2px; }
+
+/* === TESTIMONIAL === */
+.testimonial-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* === DIVIDER === */
+.divider {
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin: 32px auto;
+  border-radius: 2px;
+}
+.divider-left {
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin: 24px 0;
+  border-radius: 2px;
+}
+
+/* === FAQ === */
+.faq-item { border-bottom: 1px solid rgba(0,0,0,0.08); padding: 24px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.38rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+.faq-a { font-size: 1.12rem; color: var(--text-body); }
+
+/* === VALUE STACK === */
+.value-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.value-row:last-child { border-bottom: none; }
+.value-label { font-size: 1.1rem; color: rgba(255,255,255,0.78); }
+.value-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--gold-light);
+}
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 4px;
+}
+.total-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+.total-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--gold-light);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+.price-now {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  color: #FFFFFF;
+}
+
+.em-rose { color: var(--dusty-rose); font-style: italic; }
+
+/* === SPACER === */
+.spacer-sm { height: 24px; }
+.spacer-md { height: 40px; }
+.spacer-lg { height: 60px; }
+
+/* === FOOTER === */
+footer {
+  padding: 32px 24px;
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--text-light);
+  background: var(--warm-white);
+}
+
+/* === CHAPTER CARDS === */
+.chapter-card {
+  background: #FFF;
+  border-radius: 16px;
+  padding: 28px 32px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.04);
+  margin-bottom: 20px;
+  transition: transform 0.25s ease;
+}
+.chapter-card:hover { transform: translateY(-3px); }
+.chapter-card h4 {
+  font-size: 1.32rem;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+.chapter-card p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+/* === SCIENCE SECTION (bare layout) === */
+.science-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+.science-card {
+  background: #FFF;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.science-card h4 { font-size: 1.25rem; margin-bottom: 8px; }
+.science-card p { font-size: 1.1rem; color: var(--text-light); }
+
+@media (max-width: 650px) {
+  .science-grid { grid-template-columns: 1fr; }
+}
+
+/* === ABOUT IMAGE PLACEHOLDER === */
+.about-section-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* === BONUS CARDS DARK === */
+.bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+@media (max-width: 650px) { .bonus-grid { grid-template-columns: 1fr; } }
+
+/* === DECORATIVE NUMBER === */
+.decorative-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--decorative-light);
+  line-height: 1;
+  margin-bottom: -8px;
+}
+.section-dark .decorative-num { color: rgba(255,255,255,0.06); }
+
+/* === OFFER INTRO === */
+.offer-intro { padding: 100px 24px; }
+.offer-heading { font-size: clamp(2.4rem, 5vw, 3.5rem); }
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero section-dark text-center">
+  <div class="inner-narrow">
+    <span class="eyebrow eyebrow-light">Neuroscience-Backed Meditations for Subconscious Reprogramming</span>
+    <h1>Stop <span class="em-gold">Wishing</span> for Change.<br>Start <span class="em-gold">Rewiring</span> Your Brain to Create It.</h1>
+    <p class="subheadline">12 science-backed guided meditations, brainwave-targeted audio tracks, journal prompts, and a complete 30-day plan... all designed to reprogram your subconscious mind and align your energy with the life you actually want.</p>
+    <a href="#buy" class="cta-btn">YES, I Want to Start Manifesting → Just $9.99</a>
+    <p class="comfort-text comfort-text-dark">Instant digital download. Start your first meditation today.</p>
+  </div>
+</section>
+
+<!-- ==================== PROBLEM AGITATION ==================== -->
+<section class="section section-light">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark">Sound familiar?</span>
+    <h2>You've Read the Books. Watched the Videos. Repeated the Affirmations. <span class="em-gold">And Nothing Has Shifted.</span></h2>
+    <div class="spacer-md"></div>
+    <p>You know manifestation is real. You've felt glimmers of it. But every time you try to make it "work," something feels... off.</p>
+    <p>You sit down to visualize, and your mind races. You repeat affirmations, but your body doesn't believe a word. You set intentions, then spend the rest of the day in the same anxious loop you woke up in.</p>
+    <div class="spacer-md"></div>
+
+    <div class="highlight-pain">
+      <ul class="pain-list">
+        <li>You consume more content about manifestation than you actually <em class="em-rose">practice</em></li>
+        <li>You feel a gap between what you consciously want and what your subconscious keeps creating</li>
+        <li>You've tried meditating, but you don't know if you're doing it "right" or if it's actually doing anything</li>
+        <li>You feel stuck in old emotional patterns: scarcity, self-doubt, unworthiness, fear</li>
+        <li>You're exhausted from trying to <em class="em-rose">think</em> your way into a new life</li>
+        <li>You sense there's a deeper layer you haven't been able to reach on your own</li>
+      </ul>
+    </div>
+
+    <div class="spacer-sm"></div>
+    <p>Here's the truth most manifestation content won't tell you:</p>
+    <p><strong>Up to 95% of your behaviors and reactions are run by subconscious programming.</strong> That means you could consciously desire abundance, love, or purpose... while your subconscious loops fear, scarcity, or unworthiness on repeat.</p>
+    <p>Affirmations alone can't override that. Vision boards can't override that. Not until you get your brain into the right state to actually <em class="em-rose">receive</em> new instructions.</p>
+  </div>
+</section>
+
+<!-- ==================== DESIRE STIRRING ==================== -->
+<section class="section section-cream">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark">Imagine this instead</span>
+    <h2>What If Manifesting Felt Like <span class="em-gold">Coming Home</span> to Yourself?</h2>
+    <div class="spacer-md"></div>
+
+    <div class="highlight-desire">
+      <ul class="desire-list">
+        <li>You wake up and spend 10 minutes in a guided meditation that sets your emotional frequency for the entire day</li>
+        <li>You feel a deep, physical sense of calm and clarity, not just a fleeting "good thought"</li>
+        <li>Old limiting beliefs start dissolving, not because you forced them out, but because your subconscious finally received a better blueprint</li>
+        <li>Your nervous system feels regulated. Your energy feels aligned. You stop second-guessing yourself.</li>
+        <li>You fall asleep at night knowing your subconscious is integrating and recalibrating while you rest</li>
+        <li>You start noticing synchronicities, opportunities, and shifts that feel almost effortless</li>
+      </ul>
+    </div>
+
+    <p>This isn't fantasy. It's what happens when you stop trying to manifest from your conscious mind alone and start working with your brain's natural architecture.</p>
+    <p>Neuroscience confirms that your brain can't tell the difference between a vividly imagined experience and a real one. When you pair emotional rehearsal with the right brainwave state, your nervous system begins to adapt as if your desires already exist.</p>
+    <p>You stop hoping. You start <strong>embodying</strong>.</p>
+  </div>
+</section>
+
+<!-- ==================== MID CTA ==================== -->
+<section class="cta-section section-light text-center">
+  <div class="inner">
+    <a href="#buy" class="cta-btn">YES, I'm Ready to Rewire My Reality → Just $9.99</a>
+    <p class="comfort-text">Instant digital download. No subscription. Yours forever.</p>
+  </div>
+</section>
+
+<!-- ==================== OFFER INTRODUCTION ==================== -->
+<section class="offer-intro section-dark text-center">
+  <div class="inner-narrow">
+    <span class="eyebrow eyebrow-light">Introducing</span>
+    <h2 class="offer-heading">Guided Manifestation<br><span class="em-gold">Meditations</span></h2>
+    <div class="spacer-md"></div>
+
+    <img src="GUIDED%20MANIFESTATION%20MEDITATIONS.png" alt="Guided Manifestation Meditations - Digital Workbook" class="product-img">
+
+    <div class="spacer-lg"></div>
+    <p style="font-size:1.24rem; max-width:640px; margin: 0 auto;">12 guided meditation scripts, brainwave-targeted audio tracks, deep journal prompts, and a complete 30-day plan. All designed to bypass your conscious mind, access your subconscious programming, and rewire it from the inside out.</p>
+  </div>
+</section>
+
+<!-- ==================== TANGIBLE DELIVERABLES ==================== -->
+<section class="section section-light">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark text-center" style="display:block;">Everything inside</span>
+    <h2 class="text-center">Here's What You'll Get</h2>
+    <div class="spacer-md"></div>
+
+    <div class="grid-2">
+      <div class="card-light text-center">
+        <h4>12 Guided Meditation Scripts</h4>
+        <p style="font-size:1.1rem; color:var(--text-light);">Each one targets a specific brainwave state (Alpha, Theta, or Delta) for precise subconscious work. Read them, record them, or use them with the included audio.</p>
+      </div>
+      <div class="card-light text-center">
+        <h4>Brainwave-Targeted Audio Tracks</h4>
+        <p style="font-size:1.1rem; color:var(--text-light);">Professionally recorded audio files embedded with binaural beats for each meditation. Just press play, put on headphones, and let the frequencies do the heavy lifting.</p>
+      </div>
+      <div class="card-light text-center">
+        <h4>Journal Prompts After Every Session</h4>
+        <p style="font-size:1.1rem; color:var(--text-light);">Capture insights, emotional shifts, and subconscious downloads immediately after each meditation, while they're still fresh and alive in your awareness.</p>
+      </div>
+      <div class="card-light text-center">
+        <h4>A Complete 30-Day Manifestation Plan</h4>
+        <p style="font-size:1.1rem; color:var(--text-light);">Four phased weeks that take you from grounding and activating, through receiving and embodying, all the way to clearing resistance and resting in flow.</p>
+      </div>
+      <div class="card-light text-center">
+        <h4>Domain-Focused Meditations</h4>
+        <p style="font-size:1.1rem; color:var(--text-light);">Targeted sessions for the three most emotionally charged life areas: money, love, and purpose. Go deep where it matters most to you right now.</p>
+      </div>
+      <div class="card-light text-center">
+        <h4>Morning &amp; Evening Alignment Rituals</h4>
+        <p style="font-size:1.1rem; color:var(--text-light);">Specific practices for the two "neuroplasticity gateways" when your brain is most impressionable. Start and end each day in your manifesting frequency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== INTENTIONAL DESIGN (BARE LAYOUT) ==================== -->
+<section class="section section-cream">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark text-center" style="display:block;">Designed with intention</span>
+    <h2 class="text-center">Why This Journal Looks "Simple" <span class="em-gold">(And Why That's the Point)</span></h2>
+    <div class="spacer-md"></div>
+
+    <p>Let's address the elephant in the room. When you open this journal, you won't find ornate layouts, colorful illustrations, or decorative pages. It's clean. It's minimal. It's text.</p>
+    <p><strong>That's not a shortcut. It's a research-backed decision.</strong></p>
+
+    <div class="spacer-md"></div>
+
+    <div class="gold-container" style="margin-bottom: 32px;">
+      <p style="font-size:1.18rem; color: var(--text-dark);"><strong>The science is clear:</strong> pen-and-paper engagement dramatically improves memory retention, emotional processing, and the ability to track personal progress over time. When you write by hand, your brain encodes information at a deeper level than typing or passive reading.</p>
+    </div>
+
+    <div class="science-grid">
+      <div class="science-card">
+        <h4>Minimal Visual Noise</h4>
+        <p>Your attention stays on the actual work: reflection, repetition, and practice. No decorative pages competing for your focus during the most vulnerable moments of your meditation.</p>
+      </div>
+      <div class="science-card">
+        <h4>Print-Friendly by Design</h4>
+        <p>By stripping away ink-heavy layouts, you can print this journal at home without hesitation. Lower printing costs mean you'll actually use it instead of saving it "for later."</p>
+      </div>
+      <div class="science-card">
+        <h4>Built for Pen-and-Paper</h4>
+        <p>Research shows that handwriting activates deeper cognitive processing than digital input. This journal is built to be written on, highlighted, and lived in.</p>
+      </div>
+      <div class="science-card">
+        <h4>Your Transformation Tool</h4>
+        <p>What matters most isn't the decorative pages. It's the transformation you create through daily practice. This journal keeps the spotlight where it belongs: on you.</p>
+      </div>
+    </div>
+
+    <div class="spacer-md"></div>
+    <p class="text-center" style="max-width:620px; margin: 0 auto;"><em class="kicker">Fancy layouts look good on Instagram. Bare journals change lives.</em></p>
+  </div>
+</section>
+
+<!-- ==================== SECRET SAUCE ==================== -->
+<section class="section section-light">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark text-center" style="display:block;">What makes this different</span>
+    <h2 class="text-center">Not Another Meditation Workbook. <span class="em-gold">A Rewiring System.</span></h2>
+    <div class="spacer-md"></div>
+
+    <p>Most manifestation products give you theory. Maybe a few affirmations. Maybe a pretty workbook. Then they leave you alone to "figure it out."</p>
+    <p>This workbook is different because it's built on three layers that work together:</p>
+
+    <div class="spacer-md"></div>
+    <div class="grid-3">
+      <div class="card-light">
+        <div class="decorative-num">01</div>
+        <h4>Neuroscience-Grounded</h4>
+        <p style="font-size:1.1rem; color:var(--text-light);">Every meditation targets a specific brainwave frequency. Alpha for integration. Theta for subconscious reprogramming. Delta for overnight restoration. This isn't guesswork. It's precision.</p>
+      </div>
+      <div class="card-light">
+        <div class="decorative-num">02</div>
+        <h4>Embodiment-First</h4>
+        <p style="font-size:1.1rem; color:var(--text-light);">You don't just read about transformation. You feel it. Breathe it. Write it into your nervous system. The meditations are designed for emotional rehearsal, not passive consumption.</p>
+      </div>
+      <div class="card-light">
+        <div class="decorative-num">03</div>
+        <h4>Multi-Sensory Delivery</h4>
+        <p style="font-size:1.1rem; color:var(--text-light);">Written scripts you can read. Audio tracks with embedded binaural beats. Journal prompts for integration. You engage your brain through multiple channels simultaneously.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== THIS IS FOR / NOT FOR ==================== -->
+<section class="section section-cream">
+  <div class="inner">
+    <h2 class="text-center">Is This <span class="em-gold">For You?</span></h2>
+    <div class="spacer-md"></div>
+
+    <div class="grid-2">
+      <div style="padding: 0 8px;">
+        <h4 style="color: var(--sage); margin-bottom: 16px;">This is for you if...</h4>
+        <ul class="check-list">
+          <li>You believe in the power of manifestation but want a structured, science-backed way to practice it daily</li>
+          <li>You've tried meditation before and want guided scripts with specific outcomes (not just "sit and breathe")</li>
+          <li>You feel the gap between what you consciously desire and what your subconscious keeps creating</li>
+          <li>You want to rewire limiting beliefs around money, love, purpose, or self-worth</li>
+          <li>You're ready to commit to a 30-day daily practice (even just 10 minutes)</li>
+          <li>You prefer handwriting and journaling over purely digital tools</li>
+        </ul>
+      </div>
+      <div style="padding: 0 8px;">
+        <h4 style="color: var(--dusty-rose); margin-bottom: 16px;">This is NOT for you if...</h4>
+        <ul class="notfor-list">
+          <li>You're looking for overnight miracles or "instant manifestation" with zero daily practice</li>
+          <li>You want a decorative coffee-table journal with lots of graphic design and color</li>
+          <li>You're not willing to sit with uncomfortable emotions that may surface during inner work</li>
+          <li>You expect manifestation to replace professional medical, psychological, or financial advice</li>
+          <li>You prefer passive consumption over active engagement and self-reflection</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CHAPTER BREAKDOWN ==================== -->
+<section class="section section-light">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark text-center" style="display:block;">Your journey, chapter by chapter</span>
+    <h2 class="text-center">What You'll Experience <span class="em-gold">Inside</span></h2>
+    <div class="spacer-md"></div>
+
+    <div class="chapter-card">
+      <span class="chapter-label">Chapter 1</span>
+      <h4>Aligning Your Brainwaves for Manifestation</h4>
+      <p>Understand the power of Alpha, Theta, and Delta states. Learn why your brain's frequency determines everything about your ability to manifest, and how neuroplasticity makes real transformation possible.</p>
+    </div>
+
+    <div class="chapter-card">
+      <span class="chapter-label">Chapter 2</span>
+      <h4>Breath &amp; Brainwave Priming</h4>
+      <p>Two foundational meditations that shift your nervous system from overthinking mode into calm, receptive states. The "Breath of Presence" grounds you in Alpha. The "Deep Theta Access Primer" opens the door to your subconscious.</p>
+    </div>
+
+    <div class="chapter-card">
+      <span class="chapter-label">Chapter 3</span>
+      <h4>Pre-Manifestation: The Soul Plane</h4>
+      <p>Before you can manifest powerfully, you need to know what your soul actually wants (not just what your ego thinks it wants). This "Soul-Like Listening" meditation helps you receive desires from a place of stillness, not striving.</p>
+    </div>
+
+    <div class="chapter-card">
+      <span class="chapter-label">Chapter 4</span>
+      <h4>Seeding Desire with Emotional Energy</h4>
+      <p>Desire without emotion is a wish. Here, you plant your soul's desire into your inner garden and fertilize it with the one thing that makes manifestation real: feeling. The "Seed of Possibility Activation" makes your desires visceral.</p>
+    </div>
+
+    <div class="chapter-card">
+      <span class="chapter-label">Chapter 5</span>
+      <h4>Future Self Visioning</h4>
+      <p>Meet the version of you who has already manifested what you want. Step into their body. Think their thoughts. Feel their confidence. This isn't fantasy. It's neural installation. Your brain starts adapting to that identity.</p>
+    </div>
+
+    <div class="chapter-card">
+      <span class="chapter-label">Chapter 6</span>
+      <h4>Emotional Embodiment &amp; Belief Rewiring</h4>
+      <p>Affirmations don't work when your body holds the frequency of fear. This meditation helps you locate limiting beliefs in your body, dissolve the emotions sustaining them, and replace them with felt truth.</p>
+    </div>
+
+    <div class="chapter-card">
+      <span class="chapter-label">Chapter 7</span>
+      <h4>Overcoming Resistance &amp; Limiting Patterns</h4>
+      <p>The invisible force slowing you down isn't laziness. It's old subconscious programming designed to protect you. This Theta-to-Delta meditation clears energetic blocks, releases old patterns, and creates space for what's next.</p>
+    </div>
+
+    <div class="chapter-card">
+      <span class="chapter-label">Chapter 8</span>
+      <h4>Energetic Alignment &amp; Daily Reset</h4>
+      <p>Two practices for the moments your brain is most impressionable: a Morning Manifestation Primer to set your emotional frequency for the day, and an Evening Subconscious Reset to integrate and recalibrate overnight.</p>
+    </div>
+
+    <div class="chapter-card">
+      <span class="chapter-label">Chapter 9</span>
+      <h4>Domain-Focused Meditations</h4>
+      <p>Go deep into the three life domains where manifestation hits the hardest: money (clearing scarcity and activating flow), love (opening your heart field), and purpose (aligning with your soul's calling through Delta-level restoration).</p>
+    </div>
+
+    <div class="chapter-card">
+      <span class="chapter-label">Chapter 10</span>
+      <h4>Your 30-Day Manifestation Meditation Plan</h4>
+      <p>Four phased weeks that build on each other: Ground &amp; Activate, Listen &amp; Receive, Embody &amp; Align, and Clear &amp; Reset. Includes a personalized schedule, daily accountability grid, and end-of-journey reflection prompts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MID CTA ==================== -->
+<section class="cta-section section-cream text-center">
+  <div class="inner">
+    <a href="#buy" class="cta-btn">YES, I Want to Start My 30-Day Journey → Just $9.99</a>
+    <p class="comfort-text">Instant digital download. Begin your first meditation today.</p>
+  </div>
+</section>
+
+<!-- ==================== BONUSES ==================== -->
+<section class="section section-dark" style="padding: 90px 24px;">
+  <div class="inner">
+    <span class="eyebrow eyebrow-light text-center" style="display:block;">Built right into your journal</span>
+    <h2 class="text-center">Bonuses Included <span class="em-gold">Inside the Workbook</span></h2>
+    <p class="text-center" style="max-width:620px; margin: 16px auto 0; color: rgba(255,255,255,0.6); font-size:1.1rem;">These are not separate downloads. Every bonus is woven directly into the journal so everything you need lives in one place.</p>
+    <div class="spacer-md"></div>
+
+    <div class="bonus-grid">
+      <div class="card-dark">
+        <span class="tag">Bonus 1</span>
+        <h4 style="margin-top:8px;">Complete Meditation Audio Index</h4>
+        <p style="font-size:1.1rem; color:rgba(255,255,255,0.65);">All 12 meditation titles are clickable links that take you directly to the corresponding audio track. Professionally recorded with embedded brainwave entrainment frequencies. Just click, play, and receive.</p>
+      </div>
+      <div class="card-dark">
+        <span class="tag">Bonus 2</span>
+        <h4 style="margin-top:8px;">Daily Meditation Journal Templates</h4>
+        <p style="font-size:1.1rem; color:rgba(255,255,255,0.65);">Ready-to-use morning and nightly journal templates built into the appendix. Track your primary emotion, insights received, energy shifts, and aligned actions. Every single day.</p>
+      </div>
+      <div class="card-dark">
+        <span class="tag">Bonus 3</span>
+        <h4 style="margin-top:8px;">Brainwave Science Reference Guide</h4>
+        <p style="font-size:1.1rem; color:rgba(255,255,255,0.65);">A clear, practical reference table of brainwave states (Beta through Gamma), their frequencies, associated mental states, and exactly what each one is best used for in your manifestation practice.</p>
+      </div>
+      <div class="card-dark">
+        <span class="tag">Bonus 4</span>
+        <h4 style="margin-top:8px;">Curated Reading &amp; Resource List</h4>
+        <p style="font-size:1.1rem; color:rgba(255,255,255,0.65);">A hand-picked library of books in neuroscience, manifestation, energy work, and embodiment. Organized by category so you can go deeper into whichever dimension calls to you most.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ABOUT THE AUTHOR ==================== -->
+<section class="section section-light">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark text-center" style="display:block;">Meet your guide</span>
+    <h2 class="text-center">About <span class="em-gold">Gali Litton</span></h2>
+    <div class="spacer-md"></div>
+
+    <div class="about-section-inner">
+      <div>
+        <p>Gali Litton is a writer, meditation practitioner, and explorer of the mind dedicated to helping others unlock their full potential through the intersection of neuroscience, energy work, and spiritual practice.</p>
+        <p>With years of personal experience in self-discovery and mindset transformation, Gali has developed a deep understanding of what it takes to break through mental and emotional barriers. Her work is rooted in real-life struggles and triumphs, not theory alone.</p>
+        <div class="spacer-sm"></div>
+        <ul class="arrow-list">
+          <li>Years of personal practice in meditation, energy work, and subconscious reprogramming</li>
+          <li>Deep study of neuroplasticity, quantum physics, and brainwave science</li>
+          <li>Author of "The Revolutionary Science of Manifesting"</li>
+          <li>Passionate about making transformation practical, accessible, and grounded in evidence</li>
+          <li>Believes that everyone has the power to create their own reality... sometimes they just need a guide to see it</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TESTIMONIALS PLACEHOLDER ==================== -->
+<section class="section section-cream">
+  <div class="inner text-center">
+    <span class="eyebrow eyebrow-dark">What readers are saying</span>
+    <h2>Real Experiences. <span class="em-gold">Real Shifts.</span></h2>
+    <div class="spacer-md"></div>
+
+    <div class="grid-2">
+      <div class="card-light" style="text-align:left;">
+        <div class="stars">★★★★★</div>
+        <div class="spacer-sm"></div>
+        <p class="testimonial-quote">"I've been meditating for years, but this journal gave me a structure I never knew I needed. The brainwave-targeted approach made such a difference. By week two, I was sleeping deeper and waking up with a clarity I hadn't felt in a long time."</p>
+        <div class="spacer-sm"></div>
+        <p style="font-size:0.95rem; color:var(--text-light);"><strong style="color:var(--text-dark);">Sarah M.</strong> · Yoga Instructor</p>
+      </div>
+      <div class="card-light" style="text-align:left;">
+        <div class="stars">★★★★★</div>
+        <div class="spacer-sm"></div>
+        <p class="testimonial-quote">"I was skeptical about the 'bare' design at first. But after printing it and writing in it daily, I get it now. There's something about the simplicity that keeps me focused. And the money meditation? Something unlocked. I can't explain it, but I feel different about abundance now."</p>
+        <div class="spacer-sm"></div>
+        <p style="font-size:0.95rem; color:var(--text-light);"><strong style="color:var(--text-dark);">James T.</strong> · Entrepreneur</p>
+      </div>
+      <div class="card-light" style="text-align:left;">
+        <div class="stars">★★★★★</div>
+        <div class="spacer-sm"></div>
+        <p class="testimonial-quote">"The 30-day plan is gold. I didn't have to figure out what to do each day. I just followed the phases and let the meditations build on each other. The belief rewiring meditation in Chapter 6 was a breakthrough moment for me."</p>
+        <div class="spacer-sm"></div>
+        <p style="font-size:0.95rem; color:var(--text-light);"><strong style="color:var(--text-dark);">Priya K.</strong> · Life Coach</p>
+      </div>
+      <div class="card-light" style="text-align:left;">
+        <div class="stars">★★★★★</div>
+        <div class="spacer-sm"></div>
+        <p class="testimonial-quote">"I gave this to my partner and we started doing the evening reset meditation together. It's become our nightly ritual. The journal prompts open up conversations we never would have had otherwise. Truly a sacred tool."</p>
+        <div class="spacer-sm"></div>
+        <p style="font-size:0.95rem; color:var(--text-light);"><strong style="color:var(--text-dark);">Elena R.</strong> · Therapist</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section class="section section-light">
+  <div class="inner">
+    <h2 class="text-center">Questions? <span class="em-gold">Answers.</span></h2>
+    <div class="spacer-md"></div>
+
+    <div class="faq-item">
+      <p class="faq-q">Do I need "The Revolutionary Science of Manifesting" to use this?</p>
+      <p class="faq-a">No. This workbook is a complete, standalone meditation and manifestation practice. Everything you need to understand and use each meditation is included right inside. If you also have the book, the two pair beautifully together, but it is not required.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">I'm brand new to meditation. Will this work for me?</p>
+      <p class="faq-a">Absolutely. The meditations range from 7 to 20 minutes and are written in a gentle, guiding tone. Chapter 2 starts with foundational breathwork specifically designed for beginners. No previous experience is required.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What format is this? How do I access it?</p>
+      <p class="faq-a">This is a digital PDF download that you receive instantly after purchase. You can read it on any device, or print it at home to write in by hand (which is recommended for the deepest results). The meditation audio tracks are linked directly from the journal.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">How long will the 30-day plan take me each day?</p>
+      <p class="faq-a">Most daily sessions take 10 to 20 minutes, depending on the meditation for that day. If you include the journaling prompts, plan for about 20 to 30 minutes total. The morning and evening rituals are shorter (8 to 12 minutes each).</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Why does the journal look so plain?</p>
+      <p class="faq-a">That's intentional. The minimal design is based on research showing that pen-and-paper engagement improves memory, emotional processing, and tracking. No visual noise means deeper focus on the actual work. It's also print-friendly, so you can bring it into your daily life without worrying about ink costs or decorative pages.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">Are the bonuses separate downloads?</p>
+      <p class="faq-a">No. Every bonus (the audio index, journal templates, brainwave reference guide, and reading list) is built directly into the workbook itself. One download gives you everything in one place.</p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-q">What if I've tried manifestation programs before and they didn't work?</p>
+      <p class="faq-a">Most manifestation programs focus on the conscious mind only. This journal works at the subconscious level through brainwave-targeted meditations. If past programs felt like "positive thinking" without real shifts, this approach is specifically designed to go deeper, where the actual rewiring happens.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== VALUE STACK ==================== -->
+<section id="buy" class="section section-dark" style="padding: 100px 24px;">
+  <div class="inner-tight text-center">
+    <span class="eyebrow eyebrow-light">Everything you're getting</span>
+    <h2>Your Complete <span class="em-gold">Manifestation Toolkit</span></h2>
+    <div class="spacer-md"></div>
+
+    <div style="text-align:left; max-width: 560px; margin: 0 auto;">
+      <div class="value-row">
+        <span class="value-label">12 Guided Meditation Scripts (Alpha, Theta, Delta)</span>
+        <span class="value-amount">$47</span>
+      </div>
+      <div class="value-row">
+        <span class="value-label">Brainwave-Targeted Audio Tracks with Binaural Beats</span>
+        <span class="value-amount">$27</span>
+      </div>
+      <div class="value-row">
+        <span class="value-label">Journal Prompts &amp; Reflection Exercises for Every Session</span>
+        <span class="value-amount">$15</span>
+      </div>
+      <div class="value-row">
+        <span class="value-label">Complete 30-Day Manifestation Plan with Accountability Grid</span>
+        <span class="value-amount">$19</span>
+      </div>
+      <div class="value-row">
+        <span class="value-label">Morning &amp; Evening Alignment Rituals</span>
+        <span class="value-amount">$12</span>
+      </div>
+      <div class="value-row">
+        <span class="value-label">Brainwave Science Reference Guide</span>
+        <span class="value-amount">$9</span>
+      </div>
+      <div class="value-row">
+        <span class="value-label">Curated Reading &amp; Resource List</span>
+        <span class="value-amount">$7</span>
+      </div>
+
+      <div style="border-top: 2px solid rgba(201,169,78,0.3); margin-top: 16px; padding-top: 16px;">
+        <div class="total-row">
+          <span class="total-label">Total Value</span>
+          <span class="total-amount">$136</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="spacer-lg"></div>
+    <p style="color: rgba(255,255,255,0.55); font-size: 1.1rem; margin-bottom: 8px;">Your price today:</p>
+    <p class="price-now">Just $9.99</p>
+
+    <div class="spacer-md"></div>
+    <a href="#" class="cta-btn cta-btn-large">YES, I Want to Rewire My Reality → Just $9.99</a>
+    <p class="comfort-text comfort-text-dark">Instant digital download. Start your first meditation today.</p>
+  </div>
+</section>
+
+<!-- ==================== STRONG CLOSE ==================== -->
+<section class="section section-light">
+  <div class="inner text-center">
+    <h2>You Don't Need to Believe in Magic.<br><span class="em-gold">Just Believe in the Science of Who You Are Becoming.</span></h2>
+    <div class="spacer-md"></div>
+    <p style="max-width: 620px; margin: 0 auto;">You've felt the pull to go deeper. You've sensed that something more is available to you. Not because you're broken, but because you're ready to stop running your life from outdated subconscious programs.</p>
+    <p style="max-width: 620px; margin: 0 auto;">This journal meets you where you are. It holds your hand through each meditation. It gives you the prompts to process what surfaces. It gives you the plan to stay consistent.</p>
+    <p style="max-width: 620px; margin: 0 auto;">And it asks you one simple thing: <strong>show up for 10 minutes a day.</strong></p>
+    <p style="max-width: 620px; margin: 0 auto;">The version of you who has already manifested what you want? They're not far away. They're waiting for your permission to rise.</p>
+    <div class="spacer-md"></div>
+    <p class="kicker" style="max-width:560px; margin: 0 auto;">"The dream is not outside of you. The future is not far away. What you seek is already within you, waiting for your permission to rise."</p>
+    <p style="font-size: 0.95rem; color: var(--text-light); margin-top: 8px;">— Gali Litton</p>
+  </div>
+</section>
+
+<!-- ==================== FINAL CTA ==================== -->
+<section class="cta-section section-cream text-center" style="padding: 64px 24px;">
+  <div class="inner">
+    <a href="#buy" class="cta-btn cta-btn-large">YES, I'm Ready to Begin → Just $9.99</a>
+    <p class="comfort-text">Instant digital download. Your transformation starts now.</p>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <p>&copy; 2025 Gali Litton. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

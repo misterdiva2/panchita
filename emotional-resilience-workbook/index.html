@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emotional Resilience & Alignment Workbook – By Gali Litton</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A94E;
+  --gold-light: #E8D48B;
+  --deep-navy: #0B1026;
+  --midnight: #131A2E;
+  --warm-white: #FAF7F0;
+  --soft-cream: #F5F0E3;
+  --dusty-rose: #C4828A;
+  --muted-lavender: #9B8EC4;
+  --sage: #7A9E7E;
+  --text-dark: #2A2A2A;
+  --text-body: #4A4A4A;
+  --text-light: #7A7A7A;
+  --accent-glow: rgba(201, 169, 78, 0.15);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito Sans', sans-serif; font-weight: 400; color: var(--text-dark); line-height: 1.7; background: var(--warm-white); overflow-x: hidden; }
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 700; line-height: 1.25; }
+.section { padding: 80px 24px; max-width: 820px; margin: 0 auto; }
+.hero { background: linear-gradient(170deg, var(--deep-navy) 0%, #1A2444 40%, #2A1A3A 100%); text-align: center; padding: 100px 24px 90px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse at 30% 20%, rgba(201,169,78,0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(155,142,196,0.06) 0%, transparent 50%); pointer-events: none; }
+.hero-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-eyebrow { font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: 0.92rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); color: #FFFFFF; margin-bottom: 24px; }
+.hero h1 em { color: var(--gold-light); font-style: italic; }
+.hero-sub { font-size: 1.3rem; color: rgba(255,255,255,0.75); max-width: 620px; margin: 0 auto 40px; line-height: 1.8; }
+.hero-cta { display: inline-block; background: linear-gradient(135deg, var(--gold), #D4B85A); color: var(--deep-navy); font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: 1.15rem; padding: 18px 48px; border-radius: 50px; text-decoration: none; letter-spacing: 0.5px; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 24px rgba(201,169,78,0.3); }
+.hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(201,169,78,0.45); }
+.hero-comfort { margin-top: 16px; font-size: 0.92rem; color: rgba(255,255,255,0.45); }
+.problem { background: var(--warm-white); }
+.problem h2 { font-size: clamp(2.1rem, 4.5vw, 3rem); text-align: center; margin-bottom: 40px; color: var(--text-dark); }
+.problem-story { font-size: 1.22rem; color: var(--text-body); margin-bottom: 20px; }
+.problem-story em { color: var(--dusty-rose); font-style: italic; }
+.pain-list { background: #FFF; border-left: 4px solid var(--dusty-rose); padding: 32px 36px; margin: 36px 0; border-radius: 0 12px 12px 0; box-shadow: 0 2px 20px rgba(0,0,0,0.04); }
+.pain-list p { font-size: 1.18rem; color: var(--text-body); margin-bottom: 14px; padding-left: 28px; position: relative; }
+.pain-list p::before { content: '\2717'; position: absolute; left: 0; color: var(--dusty-rose); font-weight: 700; }
+.pain-list p:last-child { margin-bottom: 0; }
+.problem-kicker { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; color: var(--text-dark); margin-top: 40px; padding: 28px; border-top: 1px solid rgba(0,0,0,0.08); border-bottom: 1px solid rgba(0,0,0,0.08); }
+.desire { background: linear-gradient(180deg, var(--soft-cream) 0%, var(--warm-white) 100%); }
+.desire h2 { font-size: clamp(2.1rem, 4.5vw, 3rem); text-align: center; margin-bottom: 40px; }
+.desire-text { font-size: 1.22rem; color: var(--text-body); margin-bottom: 20px; }
+.desire-vision { background: #FFF; border-left: 4px solid var(--sage); padding: 32px 36px; margin: 36px 0; border-radius: 0 12px 12px 0; box-shadow: 0 2px 20px rgba(0,0,0,0.04); }
+.desire-vision p { font-size: 1.18rem; color: var(--text-body); margin-bottom: 14px; padding-left: 28px; position: relative; }
+.desire-vision p::before { content: '\2726'; position: absolute; left: 0; color: var(--sage); font-weight: 700; }
+.desire-vision p:last-child { margin-bottom: 0; }
+.product-mockup { max-width: 380px; width: 100%; height: auto; margin: 40px auto 36px; display: block; filter: drop-shadow(0 12px 40px rgba(0,0,0,0.4)); }
+.offer-intro { background: var(--deep-navy); text-align: center; padding: 90px 24px; }
+.offer-intro-inner { max-width: 780px; margin: 0 auto; }
+.offer-intro .eyebrow { font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: 0.92rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.offer-intro h2 { font-size: clamp(2.4rem, 5vw, 3.5rem); color: #FFFFFF; margin-bottom: 28px; }
+.offer-intro h2 em { color: var(--gold-light); font-style: italic; }
+.offer-intro p { font-size: 1.24rem; color: rgba(255,255,255,0.7); max-width: 640px; margin: 0 auto 16px; line-height: 1.8; }
+.deliverables { background: var(--warm-white); }
+.deliverables h2 { font-size: clamp(2.1rem, 4.5vw, 2.8rem); text-align: center; margin-bottom: 48px; }
+.deliverable-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 600px) { .deliverable-grid { grid-template-columns: 1fr; } }
+.deliverable-card { background: #FFF; border-radius: 16px; padding: 32px 28px; box-shadow: 0 2px 16px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.04); transition: transform 0.3s; }
+.deliverable-card:hover { transform: translateY(-3px); }
+.deliverable-card .icon { font-size: 2rem; margin-bottom: 12px; }
+.deliverable-card h4 { font-size: 1.3rem; margin-bottom: 8px; color: var(--text-dark); }
+.deliverable-card p { font-size: 1.1rem; color: var(--text-light); line-height: 1.6; }
+.intentional-design { background: var(--warm-white); border-top: 1px solid rgba(0,0,0,0.06); }
+.intentional-design h2 { font-size: clamp(2.1rem, 4.5vw, 2.8rem); text-align: center; margin-bottom: 20px; }
+.intentional-design .subtitle { text-align: center; font-size: 1.22rem; color: var(--text-body); max-width: 640px; margin: 0 auto 40px; }
+.design-split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+@media (max-width: 650px) { .design-split { grid-template-columns: 1fr; } }
+.design-why { background: #FFF; border-radius: 16px; padding: 32px 28px; box-shadow: 0 2px 16px rgba(0,0,0,0.04); }
+.design-why h4 { font-size: 1.25rem; margin-bottom: 14px; color: var(--text-dark); }
+.design-why p { font-size: 1.1rem; color: var(--text-body); margin-bottom: 12px; padding-left: 24px; position: relative; line-height: 1.6; }
+.design-why p::before { content: '\2726'; position: absolute; left: 0; color: var(--gold); }
+.design-callout { background: linear-gradient(135deg, rgba(201,169,78,0.08), rgba(201,169,78,0.03)); border: 1px solid rgba(201,169,78,0.2); border-radius: 16px; padding: 32px 28px; }
+.design-callout h4 { font-size: 1.25rem; margin-bottom: 14px; color: var(--text-dark); }
+.design-callout p { font-size: 1.12rem; color: var(--text-body); line-height: 1.7; margin-bottom: 14px; }
+.design-callout p:last-child { margin-bottom: 0; }
+.secret-sauce { background: linear-gradient(180deg, var(--soft-cream) 0%, var(--warm-white) 100%); }
+.secret-sauce h2 { font-size: clamp(2.1rem, 4.5vw, 2.8rem); text-align: center; margin-bottom: 20px; }
+.secret-sauce .subtitle { text-align: center; font-size: 1.22rem; color: var(--text-body); max-width: 620px; margin: 0 auto 40px; }
+.sauce-pillars { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+@media (max-width: 700px) { .sauce-pillars { grid-template-columns: 1fr; } }
+.sauce-pillar { text-align: center; padding: 28px 20px; }
+.sauce-pillar .pillar-icon { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 16px; }
+.sauce-pillar:nth-child(1) .pillar-icon { background: rgba(155,142,196,0.15); }
+.sauce-pillar:nth-child(2) .pillar-icon { background: rgba(201,169,78,0.15); }
+.sauce-pillar:nth-child(3) .pillar-icon { background: rgba(122,158,126,0.15); }
+.sauce-pillar h4 { font-size: 1.25rem; margin-bottom: 8px; }
+.sauce-pillar p { font-size: 1.06rem; color: var(--text-light); }
+.callout { background: var(--warm-white); }
+.callout h2 { font-size: clamp(2.1rem, 4.5vw, 2.8rem); text-align: center; margin-bottom: 48px; }
+.callout-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+@media (max-width: 600px) { .callout-columns { grid-template-columns: 1fr; } }
+.callout-col h3 { font-size: 1.38rem; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid; }
+.callout-col.for-you h3 { color: var(--sage); border-color: var(--sage); }
+.callout-col.not-for h3 { color: var(--dusty-rose); border-color: var(--dusty-rose); }
+.callout-col p { font-size: 1.12rem; color: var(--text-body); margin-bottom: 12px; padding-left: 24px; position: relative; }
+.callout-col.for-you p::before { content: '\2713'; position: absolute; left: 0; color: var(--sage); font-weight: 700; }
+.callout-col.not-for p::before { content: '\2717'; position: absolute; left: 0; color: var(--dusty-rose); font-weight: 700; }
+.chapters { background: linear-gradient(180deg, var(--soft-cream) 0%, var(--warm-white) 100%); }
+.chapters h2 { font-size: clamp(2.1rem, 4.5vw, 3rem); text-align: center; margin-bottom: 16px; }
+.chapters .subtitle { text-align: center; color: var(--text-body); font-size: 1.2rem; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.chapter-item { background: #FFF; border-radius: 14px; padding: 28px 32px; margin-bottom: 16px; box-shadow: 0 1px 12px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.04); }
+.chapter-item .chapter-label { font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.chapter-item h4 { font-size: 1.32rem; margin-bottom: 8px; color: var(--text-dark); }
+.chapter-item p { font-size: 1.1rem; color: var(--text-light); line-height: 1.6; }
+.chapter-outcome { font-weight: 600; color: var(--text-body) !important; margin-top: 8px; }
+.bonuses { background: var(--deep-navy); padding: 90px 24px; }
+.bonuses-inner { max-width: 820px; margin: 0 auto; }
+.bonuses h2 { font-size: clamp(2.1rem, 4.5vw, 3rem); text-align: center; color: #FFF; margin-bottom: 16px; }
+.bonuses .subtitle { text-align: center; color: rgba(255,255,255,0.55); font-size: 1.2rem; margin-bottom: 48px; }
+.bonus-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px 28px; margin-bottom: 20px; }
+.bonus-card .bonus-tag { display: inline-block; background: linear-gradient(135deg, var(--gold), #D4B85A); color: var(--deep-navy); font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; margin-bottom: 12px; }
+.bonus-card h4 { font-size: 1.38rem; color: #FFF; margin-bottom: 8px; }
+.bonus-card p { font-size: 1.1rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.bonus-card .bonus-value { font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: 0.98rem; color: var(--gold-light); margin-top: 10px; }
+.about { background: var(--warm-white); }
+.about h2 { font-size: clamp(2.1rem, 4.5vw, 2.8rem); text-align: center; margin-bottom: 36px; }
+.about-content { max-width: 680px; margin: 0 auto; }
+.about-content p { font-size: 1.2rem; color: var(--text-body); margin-bottom: 18px; }
+.about-credentials { background: #FFF; border-radius: 14px; padding: 28px 32px; margin-top: 28px; box-shadow: 0 2px 16px rgba(0,0,0,0.04); }
+.about-credentials p { font-size: 1.1rem; margin-bottom: 10px; padding-left: 24px; position: relative; }
+.about-credentials p::before { content: '\2192'; position: absolute; left: 0; color: var(--gold); }
+.testimonials { background: var(--soft-cream); }
+.testimonials h2 { font-size: clamp(2.1rem, 4.5vw, 2.8rem); text-align: center; margin-bottom: 48px; }
+.testimonial-card { background: #FFF; border-radius: 16px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 16px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.04); }
+.testimonial-card .stars { color: var(--gold); font-size: 1.22rem; margin-bottom: 12px; }
+.testimonial-card blockquote { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--text-body); line-height: 1.7; margin-bottom: 16px; }
+.testimonial-card .attribution { font-size: 1rem; font-weight: 600; color: var(--text-dark); }
+.testimonial-card .attribution span { font-weight: 400; color: var(--text-light); }
+.faq { background: var(--soft-cream); }
+.faq h2 { font-size: clamp(2.1rem, 4.5vw, 2.8rem); text-align: center; margin-bottom: 48px; }
+.faq-item { background: #FFF; border-radius: 14px; padding: 24px 28px; margin-bottom: 16px; box-shadow: 0 1px 8px rgba(0,0,0,0.03); }
+.faq-item h4 { font-size: 1.25rem; color: var(--text-dark); margin-bottom: 10px; }
+.faq-item p { font-size: 1.1rem; color: var(--text-body); line-height: 1.65; }
+.value-stack { background: linear-gradient(170deg, var(--deep-navy) 0%, #1A2444 50%, #2A1A3A 100%); text-align: center; padding: 90px 24px; position: relative; }
+.value-stack-inner { max-width: 700px; margin: 0 auto; }
+.value-stack h2 { font-size: clamp(2.1rem, 4.5vw, 3rem); color: #FFF; margin-bottom: 40px; }
+.stack-item { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.stack-item .item-name { font-size: 1.14rem; color: rgba(255,255,255,0.8); text-align: left; }
+.stack-item .item-value { font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: 1.08rem; color: var(--gold-light); white-space: nowrap; }
+.stack-total { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; margin-top: 8px; border-top: 2px solid var(--gold); }
+.stack-total .item-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: #FFF; }
+.stack-total .item-value { font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--gold); text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.4); }
+.your-price { margin: 40px 0 12px; font-size: 1.15rem; color: rgba(255,255,255,0.5); }
+.price-display { font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; font-weight: 700; color: #FFF; margin-bottom: 32px; }
+.price-display span { font-size: 1.6rem; vertical-align: top; margin-right: 2px; }
+.strong-close { background: var(--warm-white); text-align: center; }
+.strong-close h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); margin-bottom: 24px; }
+.strong-close p { font-size: 1.2rem; color: var(--text-body); max-width: 620px; margin: 0 auto 20px; line-height: 1.8; }
+.strong-close .sign-off { font-family: 'Cormorant Garamond', serif; font-size: 1.48rem; font-style: italic; color: var(--text-dark); margin-top: 36px; }
+.cta-section { text-align: center; padding: 48px 24px; background: var(--soft-cream); }
+.cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold), #D4B85A); color: var(--deep-navy); font-family: 'Nunito Sans', sans-serif; font-weight: 700; font-size: 1.22rem; padding: 20px 52px; border-radius: 50px; text-decoration: none; letter-spacing: 0.5px; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 24px rgba(201,169,78,0.3); }
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(201,169,78,0.45); }
+.cta-comfort { margin-top: 14px; font-size: 0.92rem; color: var(--text-light); }
+.footer { background: var(--deep-navy); text-align: center; padding: 40px 24px; font-size: 0.92rem; color: rgba(255,255,255,0.35); }
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">A Science-Backed Workbook for Conscious Manifestors</p>
+    <h1>Stop Forcing Positive Thinking and Finally Learn How to <em>Feel</em> Your Way Into the Life You Actually Want&hellip;</h1>
+    <p class="hero-sub">The Emotional Resilience &amp; Alignment Workbook gives you the real, practical tools to shift your emotional state, rewire limiting beliefs, and manifest from a place of truth. Not toxic positivity.</p>
+    <a href="#buy" class="hero-cta">YES, I Want Emotional Alignment &rarr; Just $9.99</a>
+    <p class="hero-comfort">Instant digital download &bull; Less than the price of a latte &bull; Print-friendly format</p>
+  </div>
+</section>
+<section class="section problem">
+  <h2>You&rsquo;ve Been Doing All the &ldquo;Right&rdquo; Things&hellip; So Why Does Nothing Seem to Stick?</h2>
+  <p class="problem-story">You&rsquo;ve read the books. You&rsquo;ve written the affirmations. You&rsquo;ve set your intentions every morning, lit the candle, whispered to the universe&hellip;</p>
+  <p class="problem-story">And yet, there you are again. Lying awake at 2 a.m. with the same anxious loop running through your mind. The same tightness in your chest. The same invisible wall between you and the life you <em>know</em> you&rsquo;re meant to live.</p>
+  <p class="problem-story">Here&rsquo;s what nobody tells you about manifestation:</p>
+  <div class="pain-list">
+    <p>You visualize abundance every morning, but your body is still vibrating with stress, scarcity, and &ldquo;not-enoughness&rdquo; all day long.</p>
+    <p>You repeat empowering affirmations, but a deeper part of you whispers, <em>&ldquo;Who are you kidding?&rdquo;</em></p>
+    <p>You feel a rush of motivation after a podcast or book, but within 48 hours you&rsquo;re right back where you started, emotionally.</p>
+    <p>You know you should &ldquo;raise your vibration&rdquo;... but nobody has actually shown you <em>how</em> to do it when life is hitting hard.</p>
+    <p>You&rsquo;re exhausted from trying to think your way into a new reality while your emotions keep pulling you back to the old one.</p>
+  </div>
+  <p class="problem-story">Research shows that up to 95% of your daily thoughts, behaviors, and emotional reactions are driven by your subconscious programming. That means only 5% of your life is being run by your conscious intentions.</p>
+  <p class="problem-story">So when your subconscious beliefs say <em>&ldquo;I always have to struggle&rdquo;</em> while your affirmation says <em>&ldquo;I am abundant&rdquo;</em>&hellip; guess which one wins?</p>
+  <p class="problem-story">Positive thinking alone is like painting over mold. It looks good for a while. Until it doesn&rsquo;t.</p>
+  <p class="problem-kicker">The missing piece isn&rsquo;t more thinking. It&rsquo;s emotional mastery.<br>And that&rsquo;s exactly what this workbook was built to give you.</p>
+</section>
+<section class="section desire">
+  <h2>Imagine Waking Up Tomorrow and <em>Feeling</em> Different&hellip;</h2>
+  <p class="desire-text">Close your eyes for a moment. Picture this version of your life:</p>
+  <div class="desire-vision">
+    <p>You open your eyes in the morning and your first feeling isn&rsquo;t dread or anxiety. It&rsquo;s <strong>calm clarity</strong>.</p>
+    <p>When life throws something unexpected at you, your nervous system doesn&rsquo;t hijack you. You pause. You breathe. You <strong>choose</strong> how to respond.</p>
+    <p>Your old limiting beliefs (&ldquo;I&rsquo;m not enough,&rdquo; &ldquo;I always have to struggle,&rdquo; &ldquo;Good things don&rsquo;t last&rdquo;) are losing their grip. You can feel <strong>new neural pathways</strong> forming.</p>
+    <p>You no longer need to force positivity. Alignment feels <strong>natural</strong> because you&rsquo;ve rewired your emotional baseline.</p>
+    <p>You trust yourself. You trust your intuition. You trust that your desires are not just fantasies. They&rsquo;re <strong>blueprints</strong> for what&rsquo;s on its way to you.</p>
+    <p>Your relationships are richer. Your energy is cleaner. Your manifestations feel inevitable because your inner world and outer world are finally <strong>in sync</strong>.</p>
+  </div>
+  <p class="desire-text">This isn&rsquo;t wishful thinking. This is what becomes available when you stop trying to control your thoughts and start mastering your <em>emotions</em>.</p>
+  <p class="desire-text">Neuroscience confirms it: when you consistently practice elevated emotional states like gratitude, curiosity, and inner safety, your brain releases dopamine, oxytocin, and serotonin. These are the chemicals that enhance focus, open creativity, and make you magnetically receptive to opportunity.</p>
+  <p class="desire-text" style="font-weight:600; text-align:center; font-size:1.3rem; margin-top:32px;">That version of you is not a fantasy. She&rsquo;s a neural pathway away.</p>
+</section>
+<div class="cta-section">
+  <a href="#buy" class="cta-btn">I&rsquo;m Ready to Align. Get the Workbook for $9.99 &rarr;</a>
+  <p class="cta-comfort">Secure checkout &bull; Instant download &bull; Start today</p>
+</div>
+<section class="offer-intro">
+  <div class="offer-intro-inner">
+    <p class="eyebrow">Introducing</p>
+    <h2>The <em>Emotional Resilience &amp; Alignment</em> Workbook</h2>
+    <img src="EMOTIONAL%20RESILIENCE%20AND%20ALIGNMENT.png" alt="Emotional Resilience and Alignment Workbook by Gali Litton" class="product-mockup">
+    <p>A hands-on, print-and-work-through-it guide that bridges the gap between where you are emotionally right now and the aligned, resilient, magnetically calm version of you that manifests with ease.</p>
+    <p>Created by Gali Litton, author of <em>The Revolutionary Science of Manifesting</em>, this workbook combines practical neuroscience, psychology-backed exercises, and soul-level wisdom into a single day-by-day system you can hold in your hands.</p>
+    <p style="color: var(--gold-light); font-weight:600; margin-top:20px;">No fluff. No vague advice. Just real tools for real emotional transformation.</p>
+  </div>
+</section>
+<section class="section deliverables">
+  <h2>Here&rsquo;s What You&rsquo;ll Get Inside</h2>
+  <div class="deliverable-grid">
+    <div class="deliverable-card"><div class="icon">&#128214;</div><h4>58-Page Printable Workbook</h4><p>10 in-depth chapters with mini-lessons, guided exercises, journal prompts, and reflection pages. Designed to be printed, written in, and lived through.</p></div>
+    <div class="deliverable-card"><div class="icon">&#129504;</div><h4>Science-Backed Mini-Lessons</h4><p>Each chapter opens with a focused lesson on the neuroscience and psychology behind emotional regulation, belief reprogramming, and energetic alignment.</p></div>
+    <div class="deliverable-card"><div class="icon">&#128221;</div><h4>Guided Journal Prompts &amp; Worksheets</h4><p>Belief Excavation Grids, Trigger Response Worksheets, Reframing Practice Pages, Identity Embodiment Scripts, and more. All ready to fill in.</p></div>
+    <div class="deliverable-card"><div class="icon">&#128202;</div><h4>30-Day Trackers &amp; Planners</h4><p>Morning &amp; Evening Emotional Frequency Tracker, 30-Day Resilience Challenge grid, Weekly Alignment Check-In pages, and a Life Alignment Audit wheel.</p></div>
+    <div class="deliverable-card"><div class="icon">&#128142;</div><h4>Affirmation Card Set</h4><p>7 ready-to-cut emotional alignment affirmation cards covering calm, joy, clarity, abundance, self-worth, courage, and growth.</p></div>
+    <div class="deliverable-card"><div class="icon">&#128203;</div><h4>Appendices &amp; Resource Library</h4><p>Glossary of terms, 30 powerful journal prompts, daily practice checklist, and curated music &amp; meditation recommendations.</p></div>
+  </div>
+</section>
+<section class="section intentional-design">
+  <h2>Designed to Be <em>Worked In</em>, Not Looked At</h2>
+  <p class="subtitle">You might notice something different about this workbook. It&rsquo;s intentionally bare. And that&rsquo;s not a compromise. It&rsquo;s a <strong>design choice rooted in how the brain actually works</strong>.</p>
+  <div class="design-split">
+    <div class="design-why">
+      <h4>Why Stripped-Down Beats &ldquo;Pretty&rdquo;</h4>
+      <p>Pen-on-paper reflection improves focus, memory, and emotional processing far more than typing or scrolling ever could.</p>
+      <p>Visual clutter competes with your attention. Clean pages free your mind for the real work: your inner shifts.</p>
+      <p>Generous margins invite you to annotate, scribble, underline, and make the workbook <em>yours</em>.</p>
+      <p>A minimalist, printer-friendly format keeps your printing costs low, so the barrier to getting started is as small as possible.</p>
+      <p>Progress is easier to track over time when the pages are clean and consistent.</p>
+    </div>
+    <div class="design-callout">
+      <h4>This Is a Transformation Tool, Not a Coffee-Table Showpiece</h4>
+      <p>We stripped away every flashy graphic, every decorative distraction, every ink-heavy page that would make you hesitate to print it. What&rsquo;s left is pure function.</p>
+      <p>Every ounce of value in this workbook lives in the exercises, the prompts, and the science-backed practices. Not in the design. Because the truth is: <strong>a gorgeous workbook that sits untouched on your shelf changes nothing. A bare workbook covered in your handwriting changes everything.</strong></p>
+      <p>Your transformation doesn&rsquo;t need to look pretty. It needs to feel <em>real</em>.</p>
+    </div>
+  </div>
+</section>
+<section class="section secret-sauce">
+  <h2>What Makes This Workbook Different?</h2>
+  <p class="subtitle">Most manifestation guides tell you <em>what</em> to think. This one teaches you <em>how</em> to feel, and gives you the exact tools to practice it daily.</p>
+  <div class="sauce-pillars">
+    <div class="sauce-pillar"><div class="pillar-icon">&#128300;</div><h4>Science Meets Soul</h4><p>Grounded in real neuroscience (neuroplasticity, cortisol regulation, theta states) AND spiritual wisdom. Not one or the other. Both brains and hearts welcome here.</p></div>
+    <div class="sauce-pillar"><div class="pillar-icon">&#9997;&#65039;</div><h4>Pen-on-Paper Practice</h4><p>Intentionally designed as a plain-text, printer-friendly workbook. Research shows handwriting improves focus, memory, and emotional processing far more than typing or scrolling.</p></div>
+    <div class="sauce-pillar"><div class="pillar-icon">&#128260;</div><h4>3-Phase Alignment System</h4><p>Follows the Soul, Embodiment, Action framework: start in stillness, emotionally absorb the frequency of your desire, then anchor it with aligned daily behavior.</p></div>
+  </div>
+</section>
+<section class="section callout">
+  <h2>Is This Workbook Right for You?</h2>
+  <div class="callout-columns">
+    <div class="callout-col for-you">
+      <h3>This Is For You If&hellip;</h3>
+      <p>You&rsquo;ve been doing manifestation work but your emotional state keeps pulling you back to old patterns.</p>
+      <p>You want a practical, structured system, not just another book that tells you to &ldquo;think positive.&rdquo;</p>
+      <p>You&rsquo;re willing to spend 10 to 20 minutes a day on inner work.</p>
+      <p>You believe transformation is possible but need a guided pathway to get there.</p>
+      <p>You value the intersection of science and spirituality.</p>
+      <p>You&rsquo;re ready to stop reacting to life and start responding from alignment.</p>
+    </div>
+    <div class="callout-col not-for">
+      <h3>This Is Not For You If&hellip;</h3>
+      <p>You&rsquo;re looking for a quick-fix or magic pill with zero personal effort.</p>
+      <p>You believe manifestation is only about vision boards and affirmations, and you&rsquo;re not open to exploring the emotional and neurological dimensions.</p>
+      <p>You expect instant results without daily practice or commitment.</p>
+      <p>You want a glossy coffee-table book. This is a raw, work-in-it tool designed to be printed, written in, and used hard.</p>
+    </div>
+  </div>
+</section>
+<section class="section chapters">
+  <h2>Your Chapter-by-Chapter Journey</h2>
+  <p class="subtitle">Here&rsquo;s what you&rsquo;ll explore, practice, and transform, one powerful chapter at a time:</p>
+  <div class="chapter-item"><p class="chapter-label">Chapter 1</p><h4>Your Emotions as Energetic Data</h4><p>Discover why your emotions are not random feelings but neurochemical signals that tell you exactly where you&rsquo;re aligned (or misaligned) with your desires. You&rsquo;ll map your current &ldquo;emotional signature&rdquo; and begin tracking your triggers with a 7-day worksheet.</p><p class="chapter-outcome">By the end: You&rsquo;ll have a clear snapshot of the emotional patterns shaping your current reality.</p></div>
+  <div class="chapter-item"><p class="chapter-label">Chapter 2</p><h4>Unmasking Subconscious Beliefs</h4><p>Learn why 95% of your life runs on autopilot and how hidden beliefs silently cancel out your affirmations. You&rsquo;ll use the Belief Excavation Grid to trace a real-life event all the way down to its root limiting belief, then reframe it using three proven methods.</p><p class="chapter-outcome">By the end: You&rsquo;ll have identified and begun rewriting the invisible beliefs that have been running the show.</p></div>
+  <div class="chapter-item"><p class="chapter-label">Chapter 3</p><h4>The Neuroscience of Feeling Good</h4><p>Understand the brain chemistry behind manifestation: how cortisol sabotages your creative power and how dopamine, oxytocin, and serotonin amplify it. You&rsquo;ll begin a 30-Day Emotional Frequency Tracker to identify (and raise) your emotional set point.</p><p class="chapter-outcome">By the end: You&rsquo;ll know exactly which chemical states support your goals and how to activate them deliberately.</p></div>
+  <div class="chapter-item"><p class="chapter-label">Chapter 4</p><h4>The Three Phases of Manifesting Energy</h4><p>Most manifestation advice skips straight to action. This chapter reveals the Soul, Embodiment, Action framework: three planes of consciousness that must be aligned before results can flow. You&rsquo;ll complete the Soul Desires Discovery Practice and learn to tell ego wants from soul desires.</p><p class="chapter-outcome">By the end: You&rsquo;ll know which phase you&rsquo;ve been skipping and have a soul-aligned compass word to guide you.</p></div>
+  <div class="chapter-item"><p class="chapter-label">Chapter 5</p><h4>Regulating Your Emotions in Real Time</h4><p>Get your hands on the Pause, Breathe, Reframe technique: a simple neurological &ldquo;circuit breaker&rdquo; that stops emotional hijacks before they spiral. You&rsquo;ll fill out the Trigger Response Worksheet to rewrite your default stress reactions on the spot.</p><p class="chapter-outcome">By the end: You&rsquo;ll have a pocket-ready &ldquo;instant calm card&rdquo; and a new response script for your most common triggers.</p></div>
+  <div class="chapter-item"><p class="chapter-label">Chapter 6</p><h4>Rewiring Through Daily Repetition</h4><p>Harness neuroplasticity to install a new emotional operating system. You&rsquo;ll build your own Identity Embodiment Script, fill in the Identity Embodiment Wheel, and use a daily practice page to anchor your chosen emotional state through visualization, mantras, and movement.</p><p class="chapter-outcome">By the end: You&rsquo;ll have a personalized daily ritual that turns your desired identity into your default setting.</p></div>
+  <div class="chapter-item"><p class="chapter-label">Chapter 7</p><h4>The Daily Alignment Method</h4><p>Lock in transformation with a simple 5 to 15 minute Morning Alignment + Evening Cleanse ritual. Plus, you&rsquo;ll launch the 30-Day Emotional Resilience Challenge: a full tracking grid to build consistency and watch your emotional baseline rise in real time.</p><p class="chapter-outcome">By the end: You&rsquo;ll have a sustainable daily practice you can stick with for life, not just a week.</p></div>
+  <div class="chapter-item"><p class="chapter-label">Chapter 8</p><h4>Your Life Alignment Audit</h4><p>Zoom out and audit all 7 domains of your life (Health, Work, Relationships, Money, Fun &amp; Joy, Spirituality, and Mind) using the Life Wheel assessment. Then use the One Domain, One Week Realignment Planner to channel focused energy where it&rsquo;s needed most.</p><p class="chapter-outcome">By the end: You&rsquo;ll know exactly where your energy is stagnant and have a 7-day plan to restore flow.</p></div>
+  <div class="chapter-item"><p class="chapter-label">Chapter 9</p><h4>Overcoming Resistance &amp; Blocks</h4><p>Resistance isn&rsquo;t failure. It&rsquo;s feedback. This chapter teaches you to decode it using the Resistance Root-Finder worksheet and a powerful somatic journaling exercise that locates where resistance lives in your body and what it&rsquo;s trying to protect you from.</p><p class="chapter-outcome">By the end: You&rsquo;ll transform the energy that once held you back into fuel that propels you forward.</p></div>
+  <div class="chapter-item"><p class="chapter-label">Chapter 10</p><h4>Integration &amp; Sustainable Alignment</h4><p>Anchor everything you&rsquo;ve learned into a sustainable lifestyle. You&rsquo;ll set up your Weekly Check-In Page, receive a set of emotional alignment affirmation cards, and map your full journey from emotional chaos to coherent, conscious creation.</p><p class="chapter-outcome">By the end: You won&rsquo;t just have completed a workbook. You&rsquo;ll have installed a new emotional operating system for life.</p></div>
+</section>
+<div class="cta-section">
+  <a href="#buy" class="cta-btn">I&rsquo;m Ready. Give Me the Workbook for $9.99 &rarr;</a>
+  <p class="cta-comfort">Secure checkout &bull; Instant download &bull; Start within minutes</p>
+</div>
+<section class="bonuses">
+  <div class="bonuses-inner">
+    <h2>Bonus Resources Included Inside Your Workbook</h2>
+    <p class="subtitle">These aren&rsquo;t separate downloads. They&rsquo;re all built right into the workbook itself, ready to use the moment you open it:</p>
+    <div class="bonus-card"><span class="bonus-tag">Built-In Bonus #1</span><h4>30 Powerful Deep-Dive Journal Prompts</h4><p>A curated collection of 30 prompts designed to break through emotional blocks on demand. Use them any time you feel stuck, misaligned, or ready to go deeper. These are the exact prompts that surface hidden beliefs and dissolve resistance fast. Found in the Appendices section of your workbook.</p><p class="bonus-value">Value: $27</p></div>
+    <div class="bonus-card"><span class="bonus-tag">Built-In Bonus #2</span><h4>Daily Practice Checklist</h4><p>A clean, print-friendly daily checklist covering morning intention setting, emotional visualization, affirmation practice, inspired action, AM/PM tracking, evening reflection, and celebration. Pick 3 to 5 items and build your alignment habit with zero overwhelm. Included at the back of the workbook for easy access.</p><p class="bonus-value">Value: $17</p></div>
+    <div class="bonus-card"><span class="bonus-tag">Built-In Bonus #3</span><h4>Curated Music &amp; Meditation Resource Guide</h4><p>A hand-picked guide to alpha wave soundscapes, 432 Hz healing music, lo-fi focus tracks, and guided meditations for theta access, emotional clearing, heart opening, and embodiment activation. Includes a link to Gali&rsquo;s own meditation library at galilitton.com/meditations. All woven into the Appendices.</p><p class="bonus-value">Value: $19</p></div>
+    <div class="bonus-card"><span class="bonus-tag">Built-In Bonus #4</span><h4>7 Emotional Alignment Affirmation Cards</h4><p>Ready-to-cut cards covering Calm, Joy, Clarity, Abundance, Self-Worth, Courage, and Growth. Print the page, cut along the lines, and place them on your mirror, phone, or journal. Read aloud daily with emotion for best results. Included in Chapter 10 of the workbook.</p><p class="bonus-value">Value: $12</p></div>
+  </div>
+</section>
+<section class="section about">
+  <h2>Meet Gali Litton, Your Guide on This Journey</h2>
+  <div class="about-content">
+    <p>Gali Litton is a passionate writer and explorer of the mind, dedicated to helping others unlock their full potential through meditation and manifestation.</p>
+    <p>With years of personal experience in self-discovery, energy work, and mindset transformation, Gali has developed a deep understanding of what it takes to break through mental and emotional barriers to create a life of abundance, purpose, and joy.</p>
+    <p>Her books are rooted in real-life struggles and triumphs, offering practical techniques and heartfelt insights to help readers navigate financial challenges, overcome self-doubt, cultivate inner peace, and manifest their dreams with clarity and confidence.</p>
+    <p>Gali believes that true transformation happens when we align our thoughts, emotions, and energy with our desires... without resistance, fear, or self-sabotage. This workbook is the practical companion to her teachings in <em>The Revolutionary Science of Manifesting</em>.</p>
+    <div class="about-credentials">
+      <p>Author of <em>The Revolutionary Science of Manifesting</em></p>
+      <p>Years of personal practice in meditation, energy work, and mindset transformation</p>
+      <p>Deep expertise in neuroscience-backed manifestation techniques</p>
+      <p>Dedicated to making spiritual and scientific principles accessible and actionable</p>
+      <p>Curated meditation library available at galilitton.com/meditations</p>
+    </div>
+  </div>
+</section>
+<section class="section testimonials">
+  <h2>What Readers Are Saying</h2>
+  <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;I&rsquo;ve read so many manifestation books, but this is the first one that gave me actual tools to shift how I FEEL, not just what I think. The Belief Excavation Grid alone was worth it. I uncovered a limiting belief I&rsquo;d been carrying for over 20 years and finally started rewriting it.&rdquo;</blockquote><p class="attribution">Sarah M. <span>&bull; Wellness Coach</span></p></div>
+  <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;The 30-Day Tracker changed everything for me. I could literally see my emotional patterns on paper, and once I saw them, I couldn&rsquo;t unsee them. I&rsquo;m calmer. I&rsquo;m clearer. My morning ritual now feels like coming home to myself.&rdquo;</blockquote><p class="attribution">Jennifer L. <span>&bull; Entrepreneur</span></p></div>
+  <div class="testimonial-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;What I love about Gali&rsquo;s approach is that she doesn&rsquo;t pretend manifestation is all sunshine and rainbows. She meets you where you are (the anxiety, the resistance, the self-doubt) and gives you compassionate, science-backed ways to move through it. This workbook is a gift.&rdquo;</blockquote><p class="attribution">Priya K. <span>&bull; Yoga Instructor &amp; Mother of Two</span></p></div>
+</section>
+<section class="section faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item"><h4>What exactly do I get when I purchase?</h4><p>You&rsquo;ll receive an instant digital download of the full 58-page Emotional Resilience &amp; Alignment Workbook in PDF format. This single workbook includes all 10 chapters, guided worksheets, journal prompts, 30-day trackers, affirmation cards, the resource library, and all bonus materials. Everything is in one complete package. You can print it at home or at any print shop and start working through it immediately.</p></div>
+  <div class="faq-item"><h4>Is this a physical book or a digital product?</h4><p>This is a digital PDF workbook, intentionally designed in a clean, printer-friendly format. The minimalist layout keeps printing costs low and allows you to focus on the exercises rather than flashy graphics. It&rsquo;s meant to be printed, written in, highlighted, and lived in.</p></div>
+  <div class="faq-item"><h4>How much time do I need to spend on this each day?</h4><p>As little as 10 to 20 minutes per day. The Morning Alignment and Evening Cleanse rituals can be done in 5 to 15 minutes each. You can also use the workbook in weekly deep-dive sessions of about an hour, or simply flip to relevant sections when you feel emotionally off-track. It meets you wherever you are.</p></div>
+  <div class="faq-item"><h4>I&rsquo;m not into &ldquo;woo-woo&rdquo; stuff. Will this still work for me?</h4><p>Absolutely. Every exercise in this workbook is grounded in principles from neuroscience and psychology: neuroplasticity, cortisol regulation, emotional set point theory, and cognitive reframing. The soul-based elements are complementary, not required. You can use the science-backed tools on their own and still get powerful results.</p></div>
+  <div class="faq-item"><h4>I&rsquo;ve already read Gali&rsquo;s book &ldquo;The Revolutionary Science of Manifesting.&rdquo; Do I still need this?</h4><p>Yes! The book teaches the <em>concepts</em>. This workbook gives you the <em>practice</em>. Think of it as the hands-on companion that takes the principles from the book and turns them into daily exercises, trackers, and reflection tools you can physically work through. Theory without practice doesn&rsquo;t create change. This workbook is where the change actually happens.</p></div>
+  <div class="faq-item"><h4>Are the bonuses separate downloads?</h4><p>No. All bonus materials (the 30 journal prompts, the daily practice checklist, the music &amp; meditation resource guide, and the affirmation cards) are built right into the workbook itself. You get everything in one single PDF download. Nothing separate to manage or keep track of.</p></div>
+  <div class="faq-item"><h4>How is this different from other manifestation workbooks?</h4><p>Most manifestation workbooks focus on what to think. This one focuses on how to feel, and gives you structured, science-backed tools to change your emotional baseline over time. It&rsquo;s built on a 3-phase system (Soul, Embodiment, Action) and includes real neuroscience alongside practical exercises. It&rsquo;s not fluff. It&rsquo;s inner work that works.</p></div>
+  <div class="faq-item"><h4>Can I use this if I&rsquo;m brand new to manifestation?</h4><p>Yes. In fact, this may be the best place to start. Instead of filling your head with theories first, you&rsquo;ll go straight to the practical, emotional foundation that actually makes manifestation work. Every concept is explained simply in the mini-lessons before each exercise.</p></div>
+</section>
+<section class="value-stack" id="buy">
+  <div class="value-stack-inner">
+    <h2>Everything You Get Today</h2>
+    <div class="stack-item"><span class="item-name">Full 58-Page Emotional Resilience &amp; Alignment Workbook (10 Chapters)</span><span class="item-value">$47</span></div>
+    <div class="stack-item"><span class="item-name">Science-Backed Mini-Lessons &amp; Exercises</span><span class="item-value">$37</span></div>
+    <div class="stack-item"><span class="item-name">30-Day Emotional Resilience Challenge &amp; Trackers</span><span class="item-value">$27</span></div>
+    <div class="stack-item"><span class="item-name">Life Alignment Audit &amp; 7-Domain Wheel Assessment</span><span class="item-value">$19</span></div>
+    <div class="stack-item"><span class="item-name">INCLUDED: 30 Deep-Dive Journal Prompts</span><span class="item-value">$27</span></div>
+    <div class="stack-item"><span class="item-name">INCLUDED: Daily Practice Checklist</span><span class="item-value">$17</span></div>
+    <div class="stack-item"><span class="item-name">INCLUDED: Curated Music &amp; Meditation Resource Guide</span><span class="item-value">$19</span></div>
+    <div class="stack-item"><span class="item-name">INCLUDED: 7 Emotional Alignment Affirmation Cards</span><span class="item-value">$12</span></div>
+    <div class="stack-total"><span class="item-name">Total Value</span><span class="item-value">$205</span></div>
+    <p class="your-price">Your price today, just:</p>
+    <div class="price-display"><span>$</span>9.99</div>
+    <p style="color: rgba(255,255,255,0.5); font-size: 1.08rem; margin-bottom: 8px;">That&rsquo;s over <strong style="color: var(--gold-light);">95% off</strong> the total value. Less than a single coffee date.</p>
+    <a href="#" class="hero-cta">YES! Give Me Everything for Just $9.99 &rarr;</a>
+    <p class="hero-comfort" style="margin-top:18px;">Instant download &bull; Secure checkout &bull; All bonuses included inside</p>
+  </div>
+</section>
+<section class="section strong-close">
+  <h2>A Year From Now, You&rsquo;ll Wish You Started Today</h2>
+  <p>Right now, you have two choices.</p>
+  <p>You can close this page and go back to the same emotional patterns. The same anxiety loops. The same invisible wall between you and the life you want. The same frustration of doing all the &ldquo;right&rdquo; things with nothing to show for it.</p>
+  <p>Or you can choose <em>today</em> to be the day everything starts to shift. Not because you forced a positive thought. Not because you white-knuckled your way through another affirmation. But because you finally gave yourself the tools to change how you <em>feel</em> at the deepest, most foundational level.</p>
+  <p>This workbook is not a magic pill. It&rsquo;s something far more powerful: a daily practice that rewires your emotional baseline, one small shift at a time, until alignment isn&rsquo;t something you do. It&rsquo;s who you <em>are</em>.</p>
+  <p>You don&rsquo;t need to be perfect. You just need to be willing. And for less than $10, there is nothing standing between you and a completely different emotional reality.</p>
+  <p>Show up. Work the pages. Breathe through the edges. Let your nervous system learn safety in the direction you want your life to go.</p>
+  <p class="sign-off">With love and alignment,<br>Gali</p>
+</section>
+<div class="cta-section" style="padding: 60px 24px;">
+  <a href="#buy" class="cta-btn" style="font-size:1.28rem; padding: 22px 56px;">Get the Workbook Now. Only $9.99 &rarr;</a>
+  <p class="cta-comfort">Instant download &bull; Over $200 in value for less than $10</p>
+</div>
+<footer class="footer">
+  <p>&copy; Gali Litton &bull; galilitton.com &bull; All rights reserved.</p>
+</footer>
+</body>
+</html>
