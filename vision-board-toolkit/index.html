@@ -1,1 +1,549 @@
-x
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision Board Toolkit by Gali Litton</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A94E;
+  --gold-light: #E8D48B;
+  --gold-on-light: #A38A2F;
+  --deep-navy: #0B1026;
+  --warm-white: #FAF7F0;
+  --soft-cream: #F5F0E3;
+  --dusty-rose: #C4828A;
+  --muted-lavender: #7B6FA8;
+  --sage: #7A9E7E;
+  --text-dark: #2A2A2A;
+  --text-body: #4A4A4A;
+  --text-light: #7A7A7A;
+  --accent-glow: rgba(201, 169, 78, 0.15);
+  --decorative-light: #E2D9C7;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400; line-height: 1.7;
+  color: var(--text-body); background: var(--warm-white);
+  font-size: 1.2rem; -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700; line-height: 1.25; color: var(--text-dark);
+}
+h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); }
+h2 { font-size: clamp(2.1rem, 4.5vw, 2.8rem); }
+h2.bigger { font-size: clamp(2.1rem, 4.5vw, 3rem); }
+h4 { font-size: 1.25rem; }
+p { margin-bottom: 16px; }
+p:last-child { margin-bottom: 0; }
+.eyebrow {
+  font-family: 'Nunito Sans', sans-serif; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 3px;
+  font-size: 0.88rem; display: block; margin-bottom: 12px;
+}
+.eyebrow-light { color: var(--gold); }
+.eyebrow-dark { color: var(--gold-on-light); }
+.section-padding { padding: 72px 24px; }
+.section-padding-dark { padding: 85px 24px; }
+.inner { max-width: 820px; margin: 0 auto; }
+.inner-narrow { max-width: 780px; margin: 0 auto; }
+.inner-tight { max-width: 700px; margin: 0 auto; }
+.text-center { text-align: center; }
+.dark-section {
+  background: linear-gradient(170deg, var(--deep-navy) 0%, #1A2444 40%, #2A1A3A 100%);
+  color: rgba(255,255,255,0.78);
+}
+.dark-section h1, .dark-section h2, .dark-section h3, .dark-section h4 { color: #FFFFFF; }
+.dark-section p, .dark-section li { color: rgba(255,255,255,0.78); }
+.dark-section .subtle-text { color: rgba(255,255,255,0.5); }
+.dark-section em.gold {
+  color: var(--gold-light); font-family: 'Cormorant Garamond', serif;
+  font-style: italic; font-weight: 600;
+}
+.light-section-a { background: var(--warm-white); }
+.light-section-b { background: linear-gradient(180deg, var(--soft-cream) 0%, var(--warm-white) 100%); }
+.light-section-a em.gold, .light-section-b em.gold {
+  color: var(--gold-on-light); font-family: 'Cormorant Garamond', serif;
+  font-style: italic; font-weight: 600;
+}
+em.pain { color: var(--dusty-rose); font-style: normal; font-weight: 600; }
+em.soul { color: var(--muted-lavender); font-style: italic; font-weight: 600; }
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), #D4B85A);
+  color: var(--deep-navy); font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700; font-size: 1.18rem; padding: 18px 48px;
+  border-radius: 50px; text-decoration: none;
+  box-shadow: 0 4px 24px rgba(201,169,78,0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: center; line-height: 1.4;
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(201,169,78,0.45); }
+.cta-btn-large { padding: 22px 56px; font-size: 1.28rem; }
+.comfort-text { font-size: 0.92rem; color: var(--text-light); margin-top: 14px; }
+.comfort-text-dark { font-size: 0.92rem; color: rgba(255,255,255,0.45); margin-top: 14px; }
+.cta-section { padding: 44px 24px; }
+.card-light {
+  background: #FFF; border-radius: 16px; padding: 30px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.25s ease;
+}
+.card-light:hover { transform: translateY(-3px); }
+.card-dark {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 30px;
+}
+.pain-box {
+  background: #FFF; border-left: 4px solid var(--dusty-rose);
+  border-radius: 0 12px 12px 0; padding: 28px 32px; margin: 20px 0;
+}
+.desire-box {
+  background: #FFF; border-left: 4px solid var(--sage);
+  border-radius: 0 12px 12px 0; padding: 28px 32px; margin: 20px 0;
+}
+.gold-accent-box {
+  background: linear-gradient(135deg, rgba(201,169,78,0.08), rgba(201,169,78,0.03));
+  border: 1px solid rgba(201,169,78,0.2); border-radius: 16px; padding: 32px;
+}
+.pain-list { list-style: none; padding: 0; }
+.pain-list li {
+  position: relative; padding-left: 32px; margin-bottom: 14px;
+  font-size: 1.14rem; line-height: 1.65;
+}
+.pain-list li::before {
+  content: '\2717'; position: absolute; left: 0;
+  color: var(--dusty-rose); font-weight: 700; font-size: 1.1rem;
+}
+.desire-list { list-style: none; padding: 0; }
+.desire-list li {
+  position: relative; padding-left: 32px; margin-bottom: 14px;
+  font-size: 1.14rem; line-height: 1.65;
+}
+.desire-list li::before {
+  content: '\2726'; position: absolute; left: 0;
+  color: var(--sage); font-weight: 700;
+}
+.for-list li::before { content: '\2713'; color: var(--sage); }
+.notfor-list li::before { content: '\2717'; color: var(--dusty-rose); }
+.credential-list li::before { content: '\2192'; color: var(--gold-on-light); }
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), #D4B85A);
+  color: var(--deep-navy); font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700; font-size: 0.82rem; text-transform: uppercase;
+  letter-spacing: 1.5px; padding: 4px 14px; border-radius: 20px; margin-bottom: 12px;
+}
+.chapter-label {
+  font-family: 'Nunito Sans', sans-serif; font-weight: 700;
+  font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
+  color: var(--gold-on-light);
+}
+.kicker {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.6rem;
+  font-style: italic; color: var(--text-dark); line-height: 1.45;
+}
+.stars { color: var(--gold); font-size: 1.22rem; letter-spacing: 3px; }
+.testimonial-quote {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+  font-style: italic; line-height: 1.55;
+}
+.product-mockup {
+  filter: drop-shadow(0 12px 40px rgba(0,0,0,0.4));
+  max-width: 380px; width: 100%; height: auto;
+  display: block; margin: 0 auto;
+}
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+@media (max-width: 700px) { .grid-3 { grid-template-columns: 1fr; } }
+@media (max-width: 650px) { .grid-2 { grid-template-columns: 1fr; } }
+.mb-0 { margin-bottom: 0 !important; }
+.mb-8 { margin-bottom: 8px; } .mb-12 { margin-bottom: 12px; }
+.mb-16 { margin-bottom: 16px; } .mb-20 { margin-bottom: 20px; }
+.mb-24 { margin-bottom: 24px; } .mb-32 { margin-bottom: 32px; }
+.mb-40 { margin-bottom: 40px; } .mb-48 { margin-bottom: 48px; }
+.mt-24 { margin-top: 24px; } .mt-32 { margin-top: 32px; }
+.faq-item { border-bottom: 1px solid rgba(0,0,0,0.08); padding: 24px 0; }
+.faq-question {
+  font-family: 'Cormorant Garamond', serif; font-weight: 700;
+  font-size: 1.28rem; color: var(--text-dark); cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.faq-question::after {
+  content: '+'; font-size: 1.5rem; color: var(--gold-on-light);
+  transition: transform 0.3s; flex-shrink: 0; margin-left: 16px;
+}
+.faq-item.open .faq-question::after { content: '\2212'; }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease; font-size: 1.12rem;
+}
+.faq-item.open .faq-answer { max-height: 500px; padding-top: 16px; }
+.hero-section { position: relative; overflow: hidden; }
+.hero-section::before {
+  content: ''; position: absolute; top: -50%; left: -30%;
+  width: 80%; height: 120%;
+  background: radial-gradient(ellipse, rgba(201,169,78,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-section::after {
+  content: ''; position: absolute; bottom: -30%; right: -20%;
+  width: 60%; height: 100%;
+  background: radial-gradient(ellipse, rgba(155,142,196,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-content { position: relative; z-index: 1; }
+.watermark-number {
+  font-family: 'Cormorant Garamond', serif; font-weight: 700;
+  font-size: 4.5rem; color: var(--decorative-light); line-height: 1; margin-bottom: -8px;
+}
+.value-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.value-row:last-child { border-bottom: none; }
+.value-item-name { color: rgba(255,255,255,0.85); font-size: 1.1rem; }
+.value-item-price {
+  color: var(--gold-light); font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700; font-size: 1.05rem; white-space: nowrap;
+}
+.value-total-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 0 8px; border-top: 2px solid rgba(201,169,78,0.4); margin-top: 8px;
+}
+.price-label {
+  font-family: 'Nunito Sans', sans-serif; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 3px;
+  font-size: 0.88rem; color: var(--gold); margin-bottom: 8px;
+}
+.price-display {
+  font-family: 'Cormorant Garamond', serif; font-weight: 700;
+  font-size: clamp(3.6rem, 7vw, 5rem); color: #FFFFFF; line-height: 1.1;
+}
+footer {
+  text-align: center; padding: 32px 24px;
+  background: var(--deep-navy); color: rgba(255,255,255,0.45); font-size: 0.92rem;
+}
+@media (max-width: 600px) {
+  body { font-size: 1.08rem; }
+  .section-padding { padding: 52px 18px; }
+  .section-padding-dark { padding: 60px 18px; }
+  .cta-btn { padding: 16px 36px; font-size: 1.08rem; }
+  .cta-btn-large { padding: 18px 40px; font-size: 1.15rem; }
+  .pain-box, .desire-box { padding: 22px 20px; }
+  .price-display { font-size: clamp(3rem, 10vw, 4rem); }
+}
+</style>
+</head>
+<body>
+
+<section class="hero-section dark-section section-padding-dark">
+  <div class="hero-content inner-narrow text-center">
+    <span class="eyebrow eyebrow-light mb-16">For the Soul Ready to Stop Wishing and Start Creating</span>
+    <h1 class="mb-24">The Science-Backed Vision Board System That <em class="gold">Actually</em> Rewires Your Brain for What You Want...</h1>
+    <p style="font-size:1.24rem; max-width:640px; margin:0 auto 36px; color:rgba(255,255,255,0.75);">Most vision boards fail because they skip the neuroscience. This comprehensive toolkit gives you the prompts, exercises, and daily rituals to reprogram your subconscious, activate your desires across 7 life domains, and turn a simple board into a powerful manifesting system.</p>
+    <a href="#get-toolkit" class="cta-btn cta-btn-large">YES, I Want to Rewire My Reality &#8594; Just $9.99</a>
+    <p class="comfort-text-dark">Instant digital download. Start your transformation today.</p>
+  </div>
+</section>
+
+<section class="light-section-b section-padding">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark">Sound familiar?</span>
+    <h2 class="mb-24">You've Tried Vision Boards Before. <em class="gold">They Didn't Work.</em></h2>
+    <div class="pain-box mb-24">
+      <ul class="pain-list">
+        <li>You spent an afternoon cutting out magazine images, gluing them to a board, hanging it on your wall... and then <em class="pain">nothing happened</em>.</li>
+        <li>You set "intentions" every January, wrote affirmations that felt hollow, and watched another year pass with the same old patterns running the show.</li>
+        <li>You tried to "think positive" and "raise your vibration," but deep down, a quiet voice kept whispering: <em class="pain">"This doesn't really work for someone like me."</em></li>
+        <li>You felt silly. You felt frustrated. You started to wonder if you were just <em class="pain">broken</em> when it came to manifesting.</li>
+        <li>You watched other people manifest seemingly effortlessly while you stayed stuck in the same cycles of self-doubt, scarcity, and going through the motions.</li>
+      </ul>
+    </div>
+    <p class="kicker text-center mb-20">"Maybe manifestation just isn't for me."</p>
+    <p>Here is what nobody told you: it was never about you. It was never about your effort, your worthiness, or how many affirmations you repeated before bed.</p>
+    <p class="mb-0">The real problem? <strong>Traditional vision boards skip the science entirely.</strong> They focus only on what you want. But they completely ignore the subconscious mind that controls 95% of your thoughts, actions, and behaviors. And that is why your results keep contradicting your intentions.</p>
+  </div>
+</section>
+
+<section class="light-section-a section-padding">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark">Imagine this instead</span>
+    <h2 class="mb-24">What If Your Vision Board <em class="gold">Actually Worked</em>?</h2>
+    <div class="desire-box mb-24">
+      <ul class="desire-list">
+        <li>You wake up in the morning and feel a quiet, steady pull toward the life you are building. Not frantic energy. Not desperation. Just <strong>alignment</strong>.</li>
+        <li>You look at your board and your body responds. Your breath deepens. Your posture shifts. You feel it in your bones: <strong>this is already happening</strong>.</li>
+        <li>Old beliefs that used to run the show ("I never have enough," "I always mess things up," "I don't deserve this") start losing their grip. You can feel them loosening, day by day.</li>
+        <li>You notice synchronicities. Doors open. Conversations shift. Opportunities find you because your frequency has changed.</li>
+        <li>You stop chasing your vision and start <strong>becoming the version of you who already lives it</strong>.</li>
+      </ul>
+    </div>
+    <p>This is not wishful thinking. This is what happens when you engage all layers of the mind: conscious, subconscious, and energetic.</p>
+    <p>When you pair vivid imagery with emotional encoding, neuroscience-backed prompts, and daily repetition, your brain physically creates new neural pathways. The old wiring weakens. The new wiring takes over.</p>
+    <p class="kicker text-center mt-24 mb-0">Your vision board becomes a transmitter. Not just a wish list. <em class="soul">A manifesting system.</em></p>
+  </div>
+</section>
+
+<section class="light-section-b cta-section text-center">
+  <div class="inner">
+    <a href="#get-toolkit" class="cta-btn">YES, I'm Ready to Activate My Vision &#8594; Just $9.99</a>
+    <p class="comfort-text">Instant download. A complete guided transformation.</p>
+  </div>
+</section>
+
+<section class="dark-section section-padding-dark">
+  <div class="inner-narrow text-center">
+    <span class="eyebrow eyebrow-light mb-12">Introducing</span>
+    <h2 class="bigger mb-24" style="font-size:clamp(2.4rem, 5vw, 3.5rem);">The Vision Board Toolkit</h2>
+    <p class="mb-32" style="max-width:620px; margin-left:auto; margin-right:auto;">A comprehensive, science-backed workbook that bridges the gap between where you are and where your soul is calling you to be. Part journal, part neuroscience lab, part sacred container for your next chapter.</p>
+    <img src="VISION%20BOARD%20TOOLKIT.png" alt="Vision Board Toolkit by Gali Litton - Digital Product Mockup" class="product-mockup mb-32">
+    <p class="mb-0" style="font-size:1.18rem; color:rgba(255,255,255,0.7); max-width:580px; margin-left:auto; margin-right:auto;">This is not another pretty Pinterest board exercise. This is a complete reprogramming system that uses evidence-based prompts, neuroscience-backed visualization techniques, and alignment exercises to help you feel what you desire <em class="gold">before</em> it arrives.</p>
+  </div>
+</section>
+
+<section class="light-section-a section-padding">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark text-center" style="display:block;">Everything Inside</span>
+    <h2 class="text-center mb-32">Here's What You Get in the Toolkit</h2>
+    <div class="grid-3 mb-24">
+      <div class="card-light text-center">
+        <div style="font-size:2.4rem; margin-bottom:12px;">&#x1F9E0;</div>
+        <h4 class="mb-8">Subconscious Reprogramming</h4>
+        <p class="mb-0" style="font-size:1.12rem; color:var(--text-light);">Belief Rewiring Grid, journaling prompts, and neuroscience mini-lessons to identify and dissolve hidden blocks.</p>
+      </div>
+      <div class="card-light text-center">
+        <div style="font-size:2.4rem; margin-bottom:12px;">&#x1F3AF;</div>
+        <h4 class="mb-8">7 Life Domain Deep Dives</h4>
+        <p class="mb-0" style="font-size:1.12rem; color:var(--text-light);">Guided reflection across health, joy, career, relationships, finances, mind, and spirituality. With affirmations and habit trackers for each.</p>
+      </div>
+      <div class="card-light text-center">
+        <div style="font-size:2.4rem; margin-bottom:12px;">&#x2728;</div>
+        <h4 class="mb-8">Daily Activation System</h4>
+        <p class="mb-0" style="font-size:1.12rem; color:var(--text-light);">Morning and evening rituals, 7-day practice pages, consistency tracker, and theta meditation guidance.</p>
+      </div>
+      <div class="card-light text-center">
+        <div style="font-size:2.4rem; margin-bottom:12px;">&#x1F4CB;</div>
+        <h4 class="mb-8">Vision Board Templates</h4>
+        <p class="mb-0" style="font-size:1.12rem; color:var(--text-light);">Grid and circle layout blueprints, image curation exercises, and full-page assembly spreads built right in.</p>
+      </div>
+      <div class="card-light text-center">
+        <div style="font-size:2.4rem; margin-bottom:12px;">&#x1F4AB;</div>
+        <h4 class="mb-8">Manifestation Framework</h4>
+        <p class="mb-0" style="font-size:1.12rem; color:var(--text-light);">The 3 Planes of Manifestation model with soul, embodiment, and physical plane exercises plus The Flow Loop.</p>
+      </div>
+      <div class="card-light text-center">
+        <div style="font-size:2.4rem; margin-bottom:12px;">&#x1F504;</div>
+        <h4 class="mb-8">Monthly Reset System</h4>
+        <p class="mb-0" style="font-size:1.12rem; color:var(--text-light);">Reflection pages, domain progress logs, space for updated images and affirmations, and celebration rituals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light-section-b section-padding">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark text-center" style="display:block;">By Design, Not By Accident</span>
+    <h2 class="text-center mb-16">Why This Workbook Looks <em class="gold">"Simple"</em></h2>
+    <p class="text-center mb-32" style="max-width:640px; margin-left:auto; margin-right:auto; color:var(--text-light);">You might open this toolkit and notice something immediately: it has a clean, text-forward, minimalist layout. That is 100% intentional. Here is the science behind it.</p>
+    <div class="grid-2 mb-32">
+      <div class="gold-accent-box">
+        <h4 class="mb-12" style="color:var(--text-dark);">Your Focus Stays on the Work, Not the Decoration</h4>
+        <p class="mb-0" style="font-size:1.12rem;">Research in cognitive load theory shows that heavily designed pages split your mental resources between processing visuals and doing deep reflective work. A clean layout keeps your prefrontal cortex focused where it matters: on the prompts, the emotions, and the breakthroughs. Transformation does not need decoration.</p>
+      </div>
+      <div class="gold-accent-box">
+        <h4 class="mb-12" style="color:var(--text-dark);">Print-Friendly Means You Actually Use It</h4>
+        <p class="mb-0" style="font-size:1.12rem;">Glossy, ink-heavy pages look beautiful on a screen but cost a fortune to print and discourage you from writing on them. This workbook is designed to be printed affordably, marked up freely, and used as a living document. Highlight it. Scribble on it. Fill it with your energy. It was made for that.</p>
+      </div>
+      <div class="gold-accent-box">
+        <h4 class="mb-12" style="color:var(--text-dark);">Simplicity Signals Depth, Not Lack</h4>
+        <p class="mb-0" style="font-size:1.12rem;">The most powerful journals, therapy workbooks, and clinical tools in the world use minimal design for a reason. Stripped-back pages create psychological safety and openness. When there is no visual noise competing for attention, your subconscious speaks more freely. That is exactly what you need for belief rewiring.</p>
+      </div>
+      <div class="gold-accent-box">
+        <h4 class="mb-12" style="color:var(--text-dark);">This Is a Tool, Not a Coffee Table Book</h4>
+        <p class="mb-0" style="font-size:1.12rem;">Pretty workbooks often stay untouched because they feel "too nice" to write in. This one was built to get messy, get personal, and get results. Every page exists because it serves a function, not because it photographs well. The value is in the framework, the prompts, and the neuroscience. Everything else is just noise.</p>
+      </div>
+    </div>
+    <p class="kicker text-center mb-0"><em class="soul">The real beauty is in what happens inside you, not on the page.</em></p>
+  </div>
+</section>
+
+<section class="light-section-a section-padding">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark">What Makes This Different</span>
+    <h2 class="mb-24">This Is Not Another Vision Board Printable. <em class="gold">Here's Why.</em></h2>
+    <p>The internet is full of free vision board templates. Pretty PDFs with boxes to paste images into. And they all share the same fatal flaw: they give you a blank canvas with zero subconscious preparation. That is like handing someone a gym membership without teaching them how to exercise.</p>
+    <p><strong>The Vision Board Toolkit is built on three pillars that most vision board products completely ignore:</strong></p>
+    <div class="desire-box mb-16">
+      <ul class="desire-list">
+        <li><strong>Neuroscience-first approach.</strong> Every exercise is rooted in neuroplasticity, emotional encoding, and theta brainwave science. You are not just making a collage. You are physically rewiring neural pathways through guided repetition and emotional activation.</li>
+        <li><strong>Subconscious excavation before vision building.</strong> Before you ever pick up scissors, you identify the hidden beliefs running 95% of your behavior. The Belief Rewiring Grid alone can shift patterns you have carried for decades.</li>
+        <li><strong>A complete daily activation system.</strong> Most products stop at "make the board." This toolkit gives you morning and evening rituals, 7-day practice templates, a consistency tracker, and a monthly reset system so your vision stays alive and evolving, not collecting dust on a wall.</li>
+      </ul>
+    </div>
+    <p class="mb-0">This is a complete manifestation ecosystem in one workbook. Not a single-use craft project.</p>
+  </div>
+</section>
+
+<section class="light-section-b section-padding">
+  <div class="inner">
+    <h2 class="text-center mb-32">Is This <em class="gold">Right for You</em>?</h2>
+    <div class="grid-2">
+      <div>
+        <h4 class="mb-16" style="color:var(--sage);">&#x2713; This Is For You If...</h4>
+        <ul class="desire-list for-list">
+          <li>You believe in the power of intention but want a <strong>structured, science-backed method</strong> to make it real.</li>
+          <li>You have tried vision boards, affirmations, or journaling before but <strong>never had a system that tied it all together</strong>.</li>
+          <li>You are ready to look honestly at the subconscious beliefs that have been quietly sabotaging your progress.</li>
+          <li>You want a daily practice that takes <strong>15 minutes or less</strong> but creates lasting identity-level change.</li>
+          <li>You crave clarity, alignment, and intentional living across all areas of your life.</li>
+          <li>You value substance over aesthetics and want a tool that <strong>actually works</strong>, not just looks pretty.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="mb-16" style="color:var(--dusty-rose);">&#x2717; This Is Not For You If...</h4>
+        <ul class="pain-list notfor-list">
+          <li>You want an instant fix with zero inner work. This toolkit requires honest reflection and daily commitment.</li>
+          <li>You are looking for a glossy, heavily-designed coffee table book. This is a working document, not a display piece.</li>
+          <li>You believe manifestation is purely about "thinking positive" and are not open to the neuroscience behind it.</li>
+          <li>You are not willing to spend at least 15 minutes a day engaging with the prompts and practices.</li>
+          <li>You are looking for someone to do the work for you. This is a self-guided journey of radical personal responsibility.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light-section-a section-padding">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark text-center" style="display:block;">Your Journey, Chapter by Chapter</span>
+    <h2 class="text-center mb-40">Here's the <em class="gold">Experience</em> That Awaits You Inside</h2>
+    <div class="mb-40"><div class="watermark-number">01</div><span class="chapter-label">Chapter 1</span><h4 style="font-size:1.38rem; margin-bottom:12px;">Welcome &amp; Orientation</h4><p class="mb-0" style="font-size:1.14rem;">Connect with your "why" through a guided journaling prompt that becomes your truth anchor for the entire journey. Learn why traditional vision boards fail (and the missing science that makes this one different). Define manifestation on your own terms. You will leave this chapter grounded in purpose and fired up with possibility.</p></div>
+    <div class="mb-40"><div class="watermark-number">02</div><span class="chapter-label">Chapter 2</span><h4 style="font-size:1.38rem; margin-bottom:12px;">Your Subconscious Blueprint</h4><p class="mb-0" style="font-size:1.14rem;">Discover the 95% Rule and why your conscious goals keep getting overruled by invisible programming. Use the Belief Rewiring Grid to neutralize limiting beliefs and replace them with empowering ones that actually stick. By the end of this chapter, you will have identified the exact thought patterns that have been silently blocking your manifestations for years.</p></div>
+    <div class="mb-40"><div class="watermark-number">03</div><span class="chapter-label">Chapter 3</span><h4 style="font-size:1.38rem; margin-bottom:12px;">Pre-Vision Board Prep: Your 7 Life Domains</h4><p class="mb-0" style="font-size:1.14rem;">Deep-dive into Health &amp; Fitness, Fun &amp; Enjoyment, Career &amp; Work, Relationships, Financial Stability, Mind Expansion, and Spirituality &amp; Purpose. For each domain, you will journal your true desires, future-pace the emotions of already having them, craft 3 personal "I AM" affirmations, create visualization templates, and set 5 action steps with built-in habit trackers. This is where your vision goes from vague to vivid.</p></div>
+    <div class="mb-40"><div class="watermark-number">04</div><span class="chapter-label">Chapter 4</span><h4 style="font-size:1.38rem; margin-bottom:12px;">Building the Board</h4><p class="mb-0" style="font-size:1.14rem;">Choose between grid and circle layouts, then use the Image Curation Exercise to select imagery based on emotional resonance (not just aesthetics). Discover the neuroscience of why certain images rewire your brain faster than others. Includes printable keyword cut-outs (ALIGN, TRUST, ABUNDANCE, FLOW, and more), symbol prompts, and three full-page blank assembly spreads for your final board.</p></div>
+    <div class="mb-40"><div class="watermark-number">05</div><span class="chapter-label">Chapter 5</span><h4 style="font-size:1.38rem; margin-bottom:12px;">Daily Vision Activation</h4><p class="mb-0" style="font-size:1.14rem;">This is where repetition meets transformation. Follow the step-by-step morning and evening rituals designed to imprint your subconscious daily. Use the 7-Day Daily Practice Pages and consistency chart to build unstoppable momentum. Learn how theta meditation supercharges visualization (and how to access that brainwave state in minutes). This chapter alone turns a one-time activity into a lasting identity shift.</p></div>
+    <div class="mb-40"><div class="watermark-number">06</div><span class="chapter-label">Chapter 6</span><h4 style="font-size:1.38rem; margin-bottom:12px;">The Creative Cycle of Manifestation</h4><p class="mb-0" style="font-size:1.14rem;">Master the 3 Planes of Manifestation (Soul, Embodiment, Physical) and design a mini-habit for each one. Use The Flow Loop to visualize how your desires move from inspiration to reality. Learn when to push and when to pause using your nervous system as a compass. This chapter gives you the energetic architecture that most manifestation programs never even mention.</p></div>
+    <div class="mb-40"><div class="watermark-number">07</div><span class="chapter-label">Chapter 7</span><h4 style="font-size:1.38rem; margin-bottom:12px;">Monthly Reset &amp; Reflection</h4><p class="mb-0" style="font-size:1.14rem;">Track what is manifesting with the 7-domain progress log. Document synchronicities and wins. Discover emerging desires you did not even know you had. Update your affirmations and add new images as you evolve. This chapter ensures your vision board grows with you instead of going stale.</p></div>
+    <div><div class="watermark-number">08</div><span class="chapter-label">Chapter 8</span><h4 style="font-size:1.38rem; margin-bottom:12px;">Integration &amp; Expansion</h4><p class="mb-0" style="font-size:1.14rem;">Reflect on the gifts and strengths you uncovered. Set a new intention for your next chapter. Write your 1-Year Vision in vivid detail as your future self. Compile your master mantra from every affirmation that gave you chills. Learn the "Living As If" manifestation secret and step into the frequency of the life you are building. This is not an ending. It is a beginning.</p></div>
+  </div>
+</section>
+
+<section class="light-section-b cta-section text-center">
+  <div class="inner">
+    <a href="#get-toolkit" class="cta-btn">YES, I Want This Experience &#8594; Just $9.99</a>
+    <p class="comfort-text">Instant download. Start with Chapter 1 tonight.</p>
+  </div>
+</section>
+
+<section class="dark-section section-padding-dark">
+  <div class="inner">
+    <span class="eyebrow eyebrow-light text-center" style="display:block;">Built Right Into Your Toolkit</span>
+    <h2 class="text-center mb-16">Bonuses Included Inside the Workbook</h2>
+    <p class="text-center mb-40 subtle-text" style="max-width:620px; margin-left:auto; margin-right:auto;">These are not separate downloads or upsells. Every bonus below is woven directly into the pages of your toolkit, ready the moment you open it.</p>
+    <div class="grid-2">
+      <div class="card-dark"><span class="tag mb-12">Bonus 1</span><h4 style="font-size:1.32rem; margin-bottom:10px;">Printable Keyword &amp; Symbol Cut-Out Library</h4><p class="mb-0" style="font-size:1.12rem; color:rgba(255,255,255,0.7);">Three full pages of beautifully designed manifestation keywords (ALIGN, TRUST, ABUNDANCE, SOVEREIGN, CREATRIX, and more) paired with sacred geometry and spiritual symbols. Print on cardstock, cut them out, and use them on your board. No need to search Pinterest for hours. It is all right here, inside the workbook.</p></div>
+      <div class="card-dark"><span class="tag mb-12">Bonus 2</span><h4 style="font-size:1.32rem; margin-bottom:10px;">7-Day Consistency Tracker &amp; Habit System</h4><p class="mb-0" style="font-size:1.12rem; color:rgba(255,255,255,0.7);">A complete accountability system built into the workbook pages. Track your visualizations, emotional encoding, affirmations, gratitude practice, and aligned actions every single day. Research shows that tracking alone increases follow-through by up to 40%. This is your built-in accountability partner.</p></div>
+      <div class="card-dark"><span class="tag mb-12">Bonus 3</span><h4 style="font-size:1.32rem; margin-bottom:10px;">The Belief Rewiring Grid</h4><p class="mb-0" style="font-size:1.12rem; color:rgba(255,255,255,0.7);">A powerful two-step reframing tool embedded directly in Chapter 2. Take any limiting belief, neutralize its emotional charge, then transform it into fuel for your new identity. Most people pay a therapist hundreds of dollars to learn this technique. You get it right inside the workbook, ready to use immediately.</p></div>
+      <div class="card-dark"><span class="tag mb-12">Bonus 4</span><h4 style="font-size:1.32rem; margin-bottom:10px;">Extra Journaling, Sketch &amp; Assembly Spreads</h4><p class="mb-0" style="font-size:1.12rem; color:rgba(255,255,255,0.7);">Blank dotted-grid pages and extra journaling space are included at the end of the workbook so you never run out of room. Use them for expansion boards focused on a single goal, scripting sessions, intuitive downloads, or simply capturing those "aha" moments as they arise. It is all built in.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="light-section-a section-padding">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark">Meet the Author</span>
+    <h2 class="mb-24">Hi, I'm <em class="gold">Gali Litton</em>.</h2>
+    <p>I am a writer and explorer of the mind, dedicated to helping others unlock their full potential through meditation, manifestation, and mindset transformation.</p>
+    <p>My journey into this work was not born from theory. It was forged through real-life experience: navigating financial challenges, overcoming self-doubt, and spending years reconnecting with my own potential.</p>
+    <p>Through deep personal practice in energy work, neuroscience, and subconscious reprogramming, I developed a process that changed everything for me. And I have spent years refining it so I can share it with you.</p>
+    <ul class="desire-list credential-list mb-24" style="margin-top:20px;">
+      <li>Years of personal practice in meditation, energy work, and mindset transformation</li>
+      <li>Deep study of neuroscience, quantum physics, and emotional alignment principles</li>
+      <li>Author of multiple books on manifestation and conscious living</li>
+      <li>Dedicated to helping others reprogram limiting beliefs, strengthen intuition, and harness the power of the subconscious mind</li>
+    </ul>
+    <p>I believe that true transformation happens when we align our thoughts, emotions, and energy with our desires. Without resistance. Without fear. Without self-sabotage.</p>
+    <p class="mb-0">This workbook is the culmination of everything I have learned and lived. I created it because I believe <strong>everyone has the power to create their own reality</strong>. Sometimes, you just need the right system to see it.</p>
+  </div>
+</section>
+
+<section class="light-section-b section-padding">
+  <div class="inner">
+    <span class="eyebrow eyebrow-dark text-center" style="display:block;">What Readers Are Saying</span>
+    <h2 class="text-center mb-32">Real Experiences from <em class="gold">Real People</em></h2>
+    <div class="grid-2">
+      <div class="card-light"><div class="stars mb-12">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-quote mb-16">"I have done vision boards every year for five years. This was the first time I actually understood WHY they were not working. The Belief Rewiring Grid alone was worth ten times the price. I caught a pattern I have been carrying since childhood."</p><p class="mb-0" style="font-size:1rem; color:var(--text-light);"><strong style="color:var(--text-dark);">Maria C.</strong> &middot; Entrepreneur &amp; Parent of 3</p></div>
+      <div class="card-light"><div class="stars mb-12">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-quote mb-16">"I was skeptical about another manifestation product. But the neuroscience angle hooked me. By day 4 of the daily activation practice, I noticed my inner dialogue shifting. It felt subtle at first, then unmistakable. This is the real deal."</p><p class="mb-0" style="font-size:1rem; color:var(--text-light);"><strong style="color:var(--text-dark);">Janelle R.</strong> &middot; Clinical Social Worker</p></div>
+      <div class="card-light"><div class="stars mb-12">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-quote mb-16">"I love that the bonuses are already inside the workbook. No hunting for links or separate files. I printed the whole thing, grabbed my markers, and had my first deep session that same evening. The 7 Life Domains chapter changed how I see my own priorities."</p><p class="mb-0" style="font-size:1rem; color:var(--text-light);"><strong style="color:var(--text-dark);">Denise T.</strong> &middot; Teacher &amp; Wellness Advocate</p></div>
+      <div class="card-light"><div class="stars mb-12">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-quote mb-16">"The minimalist layout was actually a selling point for me. I have bought beautiful journals before and never written a single word in them because I did not want to 'ruin' them. This one? I filled it up in two weeks. Messy, honest, and powerful."</p><p class="mb-0" style="font-size:1rem; color:var(--text-light);"><strong style="color:var(--text-dark);">Priya S.</strong> &middot; UX Designer &amp; Meditation Practitioner</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="light-section-a section-padding">
+  <div class="inner" style="max-width:740px;">
+    <h2 class="text-center mb-32">Frequently Asked <em class="gold">Questions</em></h2>
+    <div class="faq-item open"><div class="faq-question" onclick="toggleFaq(this)">What exactly am I getting?</div><div class="faq-answer"><p class="mb-0">You are getting a comprehensive digital workbook (PDF) that you download instantly. It includes 8 chapters of guided prompts, neuroscience mini-lessons, journaling exercises, the Belief Rewiring Grid, 7 Life Domain deep dives with affirmation builders and habit trackers, vision board templates and printable cut-outs, a complete daily activation system with 7-day practice pages, a manifestation framework, monthly reset pages, and extra journaling and sketch space. Everything is inside one file. No separate downloads, no drip content, no waiting.</p></div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Is this a physical product or digital?</div><div class="faq-answer"><p class="mb-0">This is a digital PDF. You download it immediately after purchase. It was intentionally designed with a clean, minimalist layout so you can print it affordably at home or at any print shop. It is meant to be printed, written in, and used as a living document.</p></div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">I have never done a vision board before. Is this for beginners?</div><div class="faq-answer"><p class="mb-0">Absolutely. The toolkit starts from scratch with foundational concepts in Chapter 1, then walks you step-by-step through subconscious preparation, desire mapping, board building, and daily practice. Whether you are brand new or have done vision boards for years, the neuroscience layer and structured framework will give you a completely new experience.</p></div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How much time do I need to spend each day?</div><div class="faq-answer"><p class="mb-0">The daily activation practice is designed to take about 15 minutes. The initial chapters (subconscious work, 7 Life Domains, and board building) will take longer, but you set your own pace. Some people complete the setup chapters over a weekend. Others spread it out over a week. There is no rush. This is a living document that evolves with you.</p></div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Why is the design so plain?</div><div class="faq-answer"><p class="mb-0">By intention. Research in cognitive load theory shows that visually heavy pages split your focus between processing design elements and doing deep inner work. The minimalist layout keeps your attention on the prompts, reflections, and breakthroughs. It also prints affordably (no ink-heavy pages) and encourages you to actually write in it rather than keeping it pristine. The value is in the framework and the science, not in decorative graphics.</p></div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Do I need any special supplies?</div><div class="faq-answer"><p class="mb-0">At minimum, you need a pen and a printer. For the board-building chapter, you may also want scissors, glue, markers, and magazine clippings or printed photos. But the workbook includes printable keyword and symbol cut-outs inside, so you can get started without any magazines at all.</p></div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Are the bonuses separate downloads?</div><div class="faq-answer"><p class="mb-0">No. Every bonus (the printable cut-out library, the consistency tracker, the Belief Rewiring Grid, and the extra journaling/sketch spreads) is built directly into the workbook pages. You get everything in one single PDF download. No bonus links, no email sequences, no separate access portals.</p></div></div>
+    <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How quickly will I see results?</div><div class="faq-answer"><p class="mb-0">Many people report shifts in their inner dialogue and emotional state within the first week of daily activation practice. The neuroscience principle at work here is neuroplasticity: your brain begins forming new neural pathways from the very first session. Visible external changes (synchronicities, new opportunities, shifted relationships) vary by person, but the internal rewiring begins immediately when you show up consistently.</p></div></div>
+  </div>
+</section>
+
+<section id="get-toolkit" class="dark-section section-padding-dark">
+  <div class="inner-tight text-center">
+    <span class="eyebrow eyebrow-light mb-12">Everything You Get</span>
+    <h2 class="bigger mb-32">Your Complete Vision Board Toolkit</h2>
+    <div style="text-align:left; max-width:560px; margin:0 auto 36px;">
+      <div class="value-row"><span class="value-item-name">Comprehensive Science-Backed Workbook</span><span class="value-item-price">$29</span></div>
+      <div class="value-row"><span class="value-item-name">Subconscious Blueprint + Belief Rewiring Grid</span><span class="value-item-price">$15</span></div>
+      <div class="value-row"><span class="value-item-name">7 Life Domain Deep Dives with Trackers</span><span class="value-item-price">$19</span></div>
+      <div class="value-row"><span class="value-item-name">Daily Activation System + 7-Day Practice Pages</span><span class="value-item-price">$12</span></div>
+      <div class="value-row"><span class="value-item-name">3 Planes of Manifestation Framework</span><span class="value-item-price">$10</span></div>
+      <div class="value-row"><span class="value-item-name">Printable Keyword &amp; Symbol Cut-Out Library</span><span class="value-item-price">$7</span></div>
+      <div class="value-row"><span class="value-item-name">Monthly Reset + Reflection System</span><span class="value-item-price">$8</span></div>
+      <div class="value-total-row"><span style="color:rgba(255,255,255,0.6); font-size:1rem; font-weight:600;">Total Value</span><span style="color:rgba(255,255,255,0.6); font-size:1.1rem; font-weight:700; text-decoration:line-through;">$100</span></div>
+    </div>
+    <p class="price-label">Your Price Today</p>
+    <div class="price-display mb-32">$9.99</div>
+    <a href="#" class="cta-btn cta-btn-large" style="display:inline-block; margin-bottom:16px;">YES, I Want to Rewire My Reality &#8594; Just $9.99</a>
+    <p class="comfort-text-dark">Instant digital download. One PDF. Everything included.</p>
+  </div>
+</section>
+
+<section class="light-section-b section-padding">
+  <div class="inner text-center">
+    <h2 class="mb-24">You Already Know <em class="gold">Something Needs to Change</em>.</h2>
+    <p style="max-width:640px; margin-left:auto; margin-right:auto;">You would not have read this far if you were content with how things are. There is a part of you that is ready. Ready to stop going through the motions. Ready to stop recycling the same goals year after year. Ready to finally feel the pull of a life that excites you at a cellular level.</p>
+    <p style="max-width:640px; margin-left:auto; margin-right:auto;">This is your permission slip. Not from me. From you, to yourself.</p>
+    <p style="max-width:640px; margin-left:auto; margin-right:auto;">Permission to invest 15 minutes a day in becoming who you were always meant to be. Permission to believe that your desires are not random. They are signals. They are calling you forward.</p>
+    <p class="kicker" style="max-width:600px; margin:24px auto;">"Your job is not to chase the vision. It is to become the version of you who already lives it."</p>
+    <p style="max-width:640px; margin-left:auto; margin-right:auto;">The toolkit is here. The neuroscience is proven. The prompts are written. The daily system is waiting.</p>
+    <p style="max-width:640px; margin-left:auto; margin-right:auto;"><strong>The only missing piece is you saying yes.</strong></p>
+    <div class="mt-32">
+      <a href="#get-toolkit" class="cta-btn cta-btn-large">YES, I'm Ready to Create My Reality &#8594; Just $9.99</a>
+      <p class="comfort-text">Instant download. Start your transformation today.</p>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2025 Gali Litton. All rights reserved.</footer>
+
+<script>
+function toggleFaq(el) {
+  var item = el.parentElement;
+  var allItems = document.querySelectorAll('.faq-item');
+  allItems.forEach(function(i) { if (i !== item) i.classList.remove('open'); });
+  item.classList.toggle('open');
+}
+</script>
+</body>
+</html>
