@@ -137,14 +137,12 @@
 
     /* ── PRODUCT BLOCK ── */
     .product-block {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 56px;
-      align-items: start;
-      max-width: 880px;
+      display: flex;
+      flex-direction: column;
+      max-width: 660px;
     }
 
-    /* ── LEFT: TEXT ── */
+    /* ── TEXT ── */
     .product-text {}
 
     .product-eyebrow {
@@ -252,16 +250,17 @@
       color: var(--text-light);
     }
 
-    /* ── RIGHT: IMAGE ── */
+    /* ── IMAGE ── */
     .product-image-wrap {
-      width: 260px;
-      flex-shrink: 0;
+      width: 100%;
+      max-width: 420px;
+      margin-bottom: 40px;
     }
 
     .product-image-wrap img {
       width: 100%;
-      border-radius: 20px;
-      filter: drop-shadow(0 16px 48px rgba(0,0,0,0.22));
+      border-radius: 24px;
+      filter: drop-shadow(0 20px 56px rgba(0,0,0,0.18));
       display: block;
     }
 
@@ -318,19 +317,15 @@
       .main-content {
         padding: 40px 24px 60px;
       }
-      .product-block {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
       .product-image-wrap {
-        width: 220px;
-        margin: 0 auto;
+        max-width: 320px;
       }
     }
 
     @media (max-width: 500px) {
       .site-header { padding: 18px 20px; }
       .product-title { font-size: 2rem; }
+      .product-image-wrap { max-width: 100%; }
     }
   </style>
 </head>
@@ -339,7 +334,6 @@
   <!-- SITE HEADER -->
   <header class="site-header">
     <a href="https://galilitton.com" class="brand">Gali <span>Litton</span></a>
-    <span class="header-label">Guided Meditations</span>
   </header>
 
   <!-- PAGE WRAPPER -->
@@ -367,13 +361,24 @@
     <main class="main-content">
       <div class="product-block">
 
-        <!-- TEXT -->
+        <!-- TEXT + IMAGE: single column -->
         <div class="product-text">
           <span class="product-eyebrow">Guided Meditation</span>
           <h1 class="product-title">Breath of Presence</h1>
           <p class="product-subtitle">Finally Feel Calm in Your Body, Right Here, Right Now...</p>
           <div class="product-divider"></div>
+        </div>
 
+        <!-- IMAGE -->
+        <div class="product-image-wrap">
+          <img
+            src="01 MEDITATION.png"
+            alt="Breath of Presence – Guided Meditation by Gali Litton"
+          />
+        </div>
+
+        <!-- DESCRIPTION + CTA -->
+        <div class="product-text">
           <div class="product-description">
             <p>You know that feeling when your mind is already three steps ahead of you? Planning, worrying, replaying. Your body is here. But you are somewhere else entirely.</p>
             <p>That disconnection is exhausting. And no amount of thinking your way through it actually helps.</p>
@@ -393,14 +398,6 @@
             <a href="#" class="btn-access">Get Access</a>
             <p class="comfort-text">Instant access. Listen anytime, anywhere.</p>
           </div>
-        </div>
-
-        <!-- IMAGE -->
-        <div class="product-image-wrap">
-          <img
-            src="01 MEDITATION.png"
-            alt="Breath of Presence – Guided Meditation by Gali Litton"
-          />
         </div>
 
       </div>
