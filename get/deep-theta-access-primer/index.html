@@ -6,7 +6,6 @@
   <title>Deep Theta Access Primer | Gali Litton</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   <style>
-    /* ── TOKENS ── */
     :root {
       --gold:            #C9A94E;
       --gold-light:      #E8D48B;
@@ -37,7 +36,6 @@
       min-height: 100vh;
     }
 
-    /* ── SITE HEADER ── */
     .site-header {
       background: linear-gradient(170deg, var(--deep-navy) 0%, #1A2444 55%, #2A1A3A 100%);
       padding: 22px 40px;
@@ -64,14 +62,12 @@
       font-style: italic;
     }
 
-    /* ── PAGE WRAPPER ── */
     .page-wrapper {
       display: grid;
       grid-template-columns: var(--nav-width) 1fr;
       min-height: calc(100vh - 70px);
     }
 
-    /* ── LEFT NAV ── */
     .side-nav {
       background: var(--soft-cream);
       border-right: 1px solid rgba(0,0,0,0.06);
@@ -94,7 +90,6 @@
     }
 
     .side-nav ul { list-style: none; }
-
     .side-nav ul li { margin-bottom: 2px; }
 
     .side-nav ul li a {
@@ -115,21 +110,16 @@
       padding-left: 6px;
     }
 
-    /* ── MAIN CONTENT ── */
     .main-content {
       padding: 64px 56px 80px 56px;
       background: var(--warm-white);
     }
 
-    /* ── PRODUCT BLOCK ── */
     .product-block {
       display: flex;
       flex-direction: column;
       max-width: 660px;
     }
-
-    /* ── TEXT ── */
-    .product-text {}
 
     .product-eyebrow {
       font-family: 'Nunito Sans', sans-serif;
@@ -204,7 +194,6 @@
       color: var(--text-dark);
     }
 
-    /* ── CTA BUTTON ── */
     .cta-wrap { margin-top: 40px; }
 
     .btn-access {
@@ -234,7 +223,6 @@
       color: var(--text-light);
     }
 
-    /* ── IMAGE ── */
     .product-image-wrap {
       width: 100%;
       max-width: 420px;
@@ -248,7 +236,6 @@
       display: block;
     }
 
-    /* ── FOOTER ── */
     footer {
       background: var(--deep-navy);
       padding: 28px 40px;
@@ -263,7 +250,6 @@
     footer a { color: var(--gold); text-decoration: none; }
     footer a:hover { color: var(--gold-light); }
 
-    /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -276,7 +262,6 @@
     .product-block > *:nth-child(2) { animation-delay: 0.20s; }
     .product-block > *:nth-child(3) { animation-delay: 0.32s; }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 820px) {
       .page-wrapper { grid-template-columns: 1fr; }
       .side-nav {
@@ -299,37 +284,32 @@
 </head>
 <body>
 
-  <!-- SITE HEADER -->
   <header class="site-header">
     <a href="https://galilitton.com" class="brand">Gali <span>Litton</span></a>
   </header>
 
-  <!-- PAGE WRAPPER -->
   <div class="page-wrapper">
 
-    <!-- LEFT NAV -->
     <nav class="side-nav" aria-label="Other meditations">
       <span class="side-nav-label">Other Meditations</span>
       <ul>
-        <li><a href="#">Breath of Presence</a></li>
-        <li><a href="#">Soul-Like Listening</a></li>
-        <li><a href="#">Seed of Possibility Activation</a></li>
-        <li><a href="#">Future Self Visualization</a></li>
-        <li><a href="#">Emotional Embodiment for Belief Rewiring</a></li>
-        <li><a href="#">Clearing Resistance</a></li>
-        <li><a href="#">Morning Manifestation Primer</a></li>
-        <li><a href="#">Evening Subconscious Reset</a></li>
-        <li><a href="#">Money Flow Activation</a></li>
-        <li><a href="#">Love &amp; Connection</a></li>
-        <li><a href="#">Divine Purpose &amp; Alignment</a></li>
+        <li><a href="https://galilitton.com/get/breath-of-presence">Breath of Presence</a></li>
+        <li><a href="https://galilitton.com/get/soul-like-listening">Soul-Like Listening</a></li>
+        <li><a href="https://galilitton.com/get/seed-of-possibility-activation">Seed of Possibility Activation</a></li>
+        <li><a href="https://galilitton.com/get/future-self-visualization">Future Self Visualization</a></li>
+        <li><a href="https://galilitton.com/get/emotional-embodiment-for-belief-rewiring">Emotional Embodiment for Belief Rewiring</a></li>
+        <li><a href="https://galilitton.com/get/clearing-resistance">Clearing Resistance</a></li>
+        <li><a href="https://galilitton.com/get/morning-manifestation-primer">Morning Manifestation Primer</a></li>
+        <li><a href="https://galilitton.com/get/evening-subconscious-reset">Evening Subconscious Reset</a></li>
+        <li><a href="https://galilitton.com/get/money-flow-activation">Money Flow Activation</a></li>
+        <li><a href="https://galilitton.com/get/love-connection">Love &amp; Connection</a></li>
+        <li><a href="https://galilitton.com/get/divine-purpose-alignment">Divine Purpose &amp; Alignment</a></li>
       </ul>
     </nav>
 
-    <!-- MAIN CONTENT -->
     <main class="main-content">
       <div class="product-block">
 
-        <!-- TITLE BLOCK -->
         <div class="product-text">
           <span class="product-eyebrow">Guided Meditation</span>
           <h1 class="product-title">Deep Theta Access Primer</h1>
@@ -337,15 +317,15 @@
           <div class="product-divider"></div>
         </div>
 
-        <!-- IMAGE -->
         <div class="product-image-wrap">
-          <img
-            src="02 MEDITATION.png"
-            alt="Deep Theta Access Primer – Guided Meditation by Gali Litton"
-          />
+          <a href="https://whop.com/galilitton/deep-theta-access-primer/" target="_blank" rel="noopener noreferrer">
+            <img
+              src="02 MEDITATION.png"
+              alt="Deep Theta Access Primer – Guided Meditation by Gali Litton"
+            />
+          </a>
         </div>
 
-        <!-- DESCRIPTION + CTA -->
         <div class="product-text">
           <div class="product-description">
             <p>You've tried meditating. You sit down, close your eyes... and your mind starts writing a grocery list.</p>
@@ -363,17 +343,17 @@
           </div>
 
           <div class="cta-wrap">
-            <a href="#" class="btn-access">Get Access</a>
+            <a href="https://whop.com/galilitton/deep-theta-access-primer/" target="_blank" rel="noopener noreferrer" class="btn-access">Get Access</a>
             <p class="comfort-text">Instant access. Listen anytime, anywhere.</p>
+            <p class="comfort-text">Looking to get the bundle instead? <a href="https://galilitton.com/meditations/" style="color: var(--gold-on-light); text-decoration: underline;">Click here.</a></p>
           </div>
         </div>
 
       </div>
     </main>
 
-  </div><!-- /page-wrapper -->
+  </div>
 
-  <!-- FOOTER -->
   <footer>
     <p>&copy; Gali Litton &nbsp;|&nbsp; <a href="https://galilitton.com" target="_blank" rel="noopener noreferrer">galilitton.com</a></p>
   </footer>
