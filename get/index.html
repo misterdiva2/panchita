@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get Started | Gali Litton</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold: #C9A94E;
+      --gold-light: #E8D48B;
+      --deep-navy: #0B1026;
+      --warm-white: #FAF7F0;
+      --soft-cream: #F5F0E3;
+      --dusty-rose: #C4828A;
+      --muted-lavender: #9B8EC4;
+      --sage: #7A9E7E;
+      --text-dark: #2A2A2A;
+      --text-body: #4A4A4A;
+      --text-light: #7A7A7A;
+      --accent-glow: rgba(201,169,78,0.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      background-color: var(--warm-white);
+      color: var(--text-body);
+      font-size: 1.2rem;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(170deg, var(--deep-navy) 0%, #1A2444 40%, #2A1A3A 100%);
+      padding: 100px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(201,169,78,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(155,142,196,0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      line-height: 1.25;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+      color: var(--gold-light);
+      font-style: italic;
+    }
+
+    .hero-blurb {
+      font-size: 1.22rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 620px;
+      margin: 0 auto 16px;
+      line-height: 1.75;
+    }
+
+    .hero-blurb strong {
+      color: rgba(255,255,255,0.95);
+      font-weight: 600;
+    }
+
+    .divider-gold {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 32px auto 0;
+    }
+
+    /* ── GET SECTION ── */
+    .get-section {
+      padding: 90px 24px;
+      background: var(--warm-white);
+      text-align: center;
+    }
+
+    .get-section .inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .get-section .eyebrow {
+      color: var(--gold);
+    }
+
+    .get-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: clamp(2.1rem, 4.5vw, 2.8rem);
+      line-height: 1.25;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+
+    .get-section h2 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .get-section .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-body);
+      max-width: 540px;
+      margin: 0 auto 56px;
+    }
+
+    /* ── CARDS ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 700px) {
+      .cards { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px 28px 36px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+      border: 1px solid rgba(0,0,0,0.04);
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(201,169,78,0.14);
+    }
+
+    .card:hover::before { opacity: 1; }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(201,169,78,0.12), rgba(201,169,78,0.04));
+      border: 1px solid rgba(201,169,78,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+
+    .card-tag {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--deep-navy);
+      background: linear-gradient(135deg, var(--gold), #D4B85A);
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 1.25;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 28px;
+    }
+
+    .card-cta {
+      display: inline-block;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--deep-navy);
+      background: linear-gradient(135deg, var(--gold), #D4B85A);
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(201,169,78,0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      align-self: flex-start;
+    }
+
+    .card-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(201,169,78,0.4);
+    }
+
+    /* ── KICKER QUOTE ── */
+    .kicker-section {
+      background: linear-gradient(180deg, var(--soft-cream) 0%, var(--warm-white) 100%);
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .kicker-section .inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .kicker {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-style: italic;
+      color: var(--text-dark);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    .kicker em {
+      color: var(--gold);
+    }
+
+    .kicker-sub {
+      font-size: 1.05rem;
+      color: var(--text-light);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--deep-navy);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--gold-light); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-inner > * {
+      animation: fadeUp 0.7s ease both;
+    }
+    .hero-inner > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-inner > *:nth-child(2) { animation-delay: 0.22s; }
+    .hero-inner > *:nth-child(3) { animation-delay: 0.34s; }
+    .hero-inner > *:nth-child(4) { animation-delay: 0.46s; }
+    .hero-inner > *:nth-child(5) { animation-delay: 0.56s; }
+
+    .card {
+      animation: fadeUp 0.6s ease both;
+    }
+    .card:nth-child(1) { animation-delay: 0.15s; }
+    .card:nth-child(2) { animation-delay: 0.28s; }
+    .card:nth-child(3) { animation-delay: 0.41s; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">galilitton.com/get</span>
+      <h1>You came here to <em>get</em> something.</h1>
+      <p class="hero-blurb">
+        Gali Litton is a <strong>writer, meditation teacher, and explorer of the mind.</strong>
+        Her work sits at the intersection of science, consciousness, and the quiet art of becoming.
+        Whether you are new here or returning for more, everything she has made for you lives below.
+      </p>
+      <p class="hero-blurb">
+        So tell her: what do you want to <strong>get?</strong>
+      </p>
+      <div class="divider-gold"></div>
+    </div>
+  </section>
+
+  <!-- GET SECTION -->
+  <section class="get-section">
+    <div class="inner">
+      <span class="eyebrow">Choose Your Path</span>
+      <h2>What do you want to <em>get</em> today?</h2>
+      <p class="subtitle">Three doors. All of them lead somewhere worth going.</p>
+
+      <div class="cards">
+
+        <!-- Card 1: Free Book -->
+        <div class="card">
+          <div class="card-icon">📖</div>
+          <span class="card-tag">Free</span>
+          <h3>Get the Book</h3>
+          <p>
+            Dive into the revolutionary science of manifesting. This free book bridges
+            cutting-edge research with the inner work that actually moves the needle.
+            No fluff. No magic thinking. Just the truth about how this works.
+          </p>
+          <a
+            href="https://galilitton.com/the-revolutionary-science-of-manifesting"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card-cta"
+          >
+            YES, Get My Free Book →
+          </a>
+        </div>
+
+        <!-- Card 2: Meditations -->
+        <div class="card">
+          <div class="card-icon">🎧</div>
+          <span class="card-tag">Audio</span>
+          <h3>Get the Meditations</h3>
+          <p>
+            Guided meditations designed to take you deeper than relaxation. Into the theta state.
+            Into belief rewiring. Into the felt sense of the life you are calling in.
+            Your subconscious is listening. Let it hear something worth keeping.
+          </p>
+          <a
+            href="https://galilitton.com/meditations"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card-cta"
+          >
+            YES, Get the Meditations →
+          </a>
+        </div>
+
+        <!-- Card 3: Workbooks -->
+        <div class="card">
+          <div class="card-icon">✍️</div>
+          <span class="card-tag">Workbooks</span>
+          <h3>Get the Workbooks</h3>
+          <p>
+            Pen-to-paper tools for the ones who process by writing. These workbooks
+            turn insight into action and intention into identity. Do the inner work
+            on the page, then watch it show up in your life.
+          </p>
+          <a
+            href="https://galilitton.com/workbooks"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card-cta"
+          >
+            YES, Get the Workbooks →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KICKER -->
+  <section class="kicker-section">
+    <div class="inner">
+      <p class="kicker">
+        "The mind is not the obstacle.<br>
+        It is the <em>doorway.</em>"
+      </p>
+      <p class="kicker-sub">Welcome. You are in the right place.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      &copy; Gali Litton &nbsp;|&nbsp;
+      <a href="https://galilitton.com" target="_blank" rel="noopener noreferrer">galilitton.com</a>
+    </p>
+  </footer>
+
+</body>
+</html>
