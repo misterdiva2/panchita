@@ -1,1 +1,370 @@
-change this
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Divine Purpose &amp; Alignment | Gali Litton</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold:            #C9A94E;
+      --gold-light:      #E8D48B;
+      --gold-on-light:   #A38A2F;
+      --deep-navy:       #0B1026;
+      --warm-white:      #FAF7F0;
+      --soft-cream:      #F5F0E3;
+      --sage:            #7A9E7E;
+      --text-dark:       #2A2A2A;
+      --text-body:       #4A4A4A;
+      --text-light:      #7A7A7A;
+      --nav-width:       220px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      background-color: var(--warm-white);
+      color: var(--text-body);
+      font-size: 1.1rem;
+      min-height: 100vh;
+    }
+
+    /* ── SITE HEADER ── */
+    .site-header {
+      background: linear-gradient(170deg, var(--deep-navy) 0%, #1A2444 55%, #2A1A3A 100%);
+      padding: 22px 40px;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.35);
+    }
+
+    .site-header .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    .site-header .brand span {
+      color: var(--gold-light);
+      font-style: italic;
+    }
+
+    /* ── PAGE WRAPPER ── */
+    .page-wrapper {
+      display: grid;
+      grid-template-columns: var(--nav-width) 1fr;
+      min-height: calc(100vh - 70px);
+    }
+
+    /* ── LEFT NAV ── */
+    .side-nav {
+      background: var(--soft-cream);
+      border-right: 1px solid rgba(0,0,0,0.06);
+      padding: 48px 28px;
+      position: sticky;
+      top: 70px;
+      height: calc(100vh - 70px);
+      overflow-y: auto;
+    }
+
+    .side-nav-label {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--gold-on-light);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .side-nav ul { list-style: none; }
+    .side-nav ul li { margin-bottom: 2px; }
+
+    .side-nav ul li a {
+      display: block;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 400;
+      color: var(--text-body);
+      text-decoration: none;
+      padding: 7px 10px 7px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      line-height: 1.4;
+      transition: color 0.2s ease, padding-left 0.2s ease;
+    }
+
+    .side-nav ul li a:hover {
+      color: var(--gold-on-light);
+      padding-left: 6px;
+    }
+
+    /* ── MAIN CONTENT ── */
+    .main-content {
+      padding: 64px 56px 80px 56px;
+      background: var(--warm-white);
+    }
+
+    /* ── PRODUCT BLOCK ── */
+    .product-block {
+      display: flex;
+      flex-direction: column;
+      max-width: 660px;
+    }
+
+    .product-eyebrow {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold-on-light);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .product-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      line-height: 1.2;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .product-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      font-style: italic;
+      color: var(--gold-on-light);
+      font-weight: 400;
+      line-height: 1.45;
+      margin-bottom: 36px;
+    }
+
+    .product-divider {
+      width: 48px;
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--gold-on-light), transparent);
+      margin-bottom: 32px;
+    }
+
+    .product-description p {
+      font-size: 1.05rem;
+      color: var(--text-body);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .product-description ul {
+      list-style: none;
+      margin: 8px 0 24px 0;
+    }
+
+    .product-description ul li {
+      position: relative;
+      padding-left: 26px;
+      font-size: 1.05rem;
+      color: var(--text-body);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .product-description ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: var(--sage);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .product-description strong {
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    /* ── CTA ── */
+    .cta-wrap { margin-top: 40px; }
+
+    .btn-access {
+      display: inline-block;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--deep-navy);
+      background: linear-gradient(135deg, var(--gold), #D4B85A);
+      padding: 18px 48px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(201,169,78,0.3);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .btn-access:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201,169,78,0.45);
+    }
+
+    .comfort-text {
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: var(--text-light);
+    }
+
+    /* ── IMAGE ── */
+    .product-image-wrap {
+      width: 100%;
+      max-width: 420px;
+      margin-bottom: 40px;
+    }
+
+    .product-image-wrap img {
+      width: 100%;
+      border-radius: 24px;
+      filter: drop-shadow(0 20px 56px rgba(0,0,0,0.18));
+      display: block;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--deep-navy);
+      padding: 28px 40px;
+      text-align: center;
+    }
+
+    footer p { font-size: 0.88rem; color: rgba(255,255,255,0.4); }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { color: var(--gold-light); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .product-block > * {
+      animation: fadeUp 0.6s ease both;
+    }
+    .product-block > *:nth-child(1) { animation-delay: 0.08s; }
+    .product-block > *:nth-child(2) { animation-delay: 0.20s; }
+    .product-block > *:nth-child(3) { animation-delay: 0.32s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 820px) {
+      .page-wrapper { grid-template-columns: 1fr; }
+      .side-nav {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.07);
+        padding: 32px 24px;
+      }
+      .main-content { padding: 40px 24px 60px; }
+      .product-image-wrap { max-width: 320px; }
+    }
+
+    @media (max-width: 500px) {
+      .site-header { padding: 18px 20px; }
+      .product-title { font-size: 2rem; }
+      .product-image-wrap { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <a href="https://galilitton.com" class="brand">Gali <span>Litton</span></a>
+  </header>
+
+  <!-- PAGE WRAPPER -->
+  <div class="page-wrapper">
+
+    <!-- LEFT NAV -->
+    <nav class="side-nav" aria-label="Other meditations">
+      <span class="side-nav-label">Other Meditations</span>
+      <ul>
+        <li><a href="#">Breath of Presence</a></li>
+        <li><a href="#">Deep Theta Access Primer</a></li>
+        <li><a href="#">Soul-Like Listening</a></li>
+        <li><a href="#">Seed of Possibility Activation</a></li>
+        <li><a href="#">Future Self Visualization</a></li>
+        <li><a href="#">Emotional Embodiment for Belief Rewiring</a></li>
+        <li><a href="#">Clearing Resistance</a></li>
+        <li><a href="#">Morning Manifestation Primer</a></li>
+        <li><a href="#">Evening Subconscious Reset</a></li>
+        <li><a href="#">Money Flow Activation</a></li>
+        <li><a href="#">Love &amp; Connection</a></li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <div class="product-block">
+
+        <!-- TITLE BLOCK -->
+        <div class="product-text">
+          <span class="product-eyebrow">Guided Meditation</span>
+          <h1 class="product-title">Divine Purpose &amp; Alignment</h1>
+          <p class="product-subtitle">Align With Why You're Here and Feel the Peace That Follows...</p>
+          <div class="product-divider"></div>
+        </div>
+
+        <!-- IMAGE -->
+        <div class="product-image-wrap">
+          <img
+            src="12 MEDITATION.png"
+            alt="Divine Purpose &amp; Alignment – Guided Meditation by Gali Litton"
+          />
+        </div>
+
+        <!-- DESCRIPTION + CTA -->
+        <div class="product-text">
+          <div class="product-description">
+            <p>There is a version of busy that feels full. And there is a version that feels hollow, no matter how much you accomplish.</p>
+            <p>If you have been moving fast, checking boxes, and still ending the day with a quiet sense of <em>is this really it?</em>, that feeling is not ingratitude. It is your soul pointing you toward something truer.</p>
+            <p>You were not made to simply function. You were made for something <em>specific.</em> And deep down, part of you already knows it. This means that until you align with it, no amount of success will feel like enough.</p>
+            <p><strong>Divine Purpose &amp; Alignment</strong> is a guided meditation that takes you past the noise of expectations, obligations, and other people's definitions of a good life, so you can finally hear your own.</p>
+            <p>By the end of this session, you will have:</p>
+            <ul>
+              <li>Reconnected with the thread of meaning that has been running through your life, even in the moments you could not see it</li>
+              <li>Felt the distinct difference between performing a role and living your actual purpose</li>
+              <li>Received clarity on your next aligned step, not the entire roadmap, just the one true move that matters right now</li>
+              <li>Settled into a deep, cellular peace that only comes when you stop resisting who you were always meant to be</li>
+            </ul>
+            <p>Your purpose is not lost. You have simply been too loud to hear it.</p>
+            <p>This is the quiet that changes everything.</p>
+          </div>
+
+          <div class="cta-wrap">
+            <a href="#" class="btn-access">Get Access</a>
+            <p class="comfort-text">Instant access. Listen anytime, anywhere.</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div><!-- /page-wrapper -->
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; Gali Litton &nbsp;|&nbsp; <a href="https://galilitton.com" target="_blank" rel="noopener noreferrer">galilitton.com</a></p>
+  </footer>
+
+</body>
+</html>
