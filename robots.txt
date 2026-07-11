@@ -1,0 +1,68 @@
+# ---------------------------------------------------------------------------
+# Mainstream search engines (Google, Bing, etc.)
+# Allowed to crawl the whole site. The private /purchase/ pages carry their
+# own <meta name="robots" content="noindex"> tag — search engines must be able
+# to crawl those pages in order to SEE that tag and drop them from results.
+# So we intentionally do NOT block them here.
+# ---------------------------------------------------------------------------
+User-agent: *
+Allow: /
+
+# ---------------------------------------------------------------------------
+# AI / LLM crawlers and answer engines.
+# These generally ignore the page-level noindex tag and only obey robots.txt,
+# so we block them from the post-checkout redirect pages under /purchase/.
+# ---------------------------------------------------------------------------
+User-agent: GPTBot
+Disallow: /purchase/
+
+User-agent: OAI-SearchBot
+Disallow: /purchase/
+
+User-agent: ChatGPT-User
+Disallow: /purchase/
+
+User-agent: ClaudeBot
+Disallow: /purchase/
+
+User-agent: Claude-Web
+Disallow: /purchase/
+
+User-agent: anthropic-ai
+Disallow: /purchase/
+
+User-agent: Google-Extended
+Disallow: /purchase/
+
+User-agent: Applebot-Extended
+Disallow: /purchase/
+
+User-agent: CCBot
+Disallow: /purchase/
+
+User-agent: PerplexityBot
+Disallow: /purchase/
+
+User-agent: Bytespider
+Disallow: /purchase/
+
+User-agent: Amazonbot
+Disallow: /purchase/
+
+User-agent: cohere-ai
+Disallow: /purchase/
+
+User-agent: Meta-ExternalAgent
+Disallow: /purchase/
+
+User-agent: Meta-ExternalFetcher
+Disallow: /purchase/
+
+User-agent: Diffbot
+Disallow: /purchase/
+
+User-agent: Omgilibot
+Disallow: /purchase/
+
+User-agent: Timpibot
+Disallow: /purchase/
