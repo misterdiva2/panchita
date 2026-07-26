@@ -11,58 +11,76 @@ Allow: /
 # ---------------------------------------------------------------------------
 # AI / LLM crawlers and answer engines.
 # These generally ignore the page-level noindex tag and only obey robots.txt,
-# so we block them from the post-checkout redirect pages under /purchase/.
+# so we block them from the private pages under /purchase/ and /thank-you/.
 # ---------------------------------------------------------------------------
 User-agent: GPTBot
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: OAI-SearchBot
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: ChatGPT-User
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: ClaudeBot
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: Claude-Web
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: anthropic-ai
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: Google-Extended
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: Applebot-Extended
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: CCBot
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: PerplexityBot
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: Bytespider
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: Amazonbot
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: cohere-ai
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: Meta-ExternalAgent
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: Meta-ExternalFetcher
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: Diffbot
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: Omgilibot
 Disallow: /purchase/
+Disallow: /thank-you/
 
 User-agent: Timpibot
 Disallow: /purchase/
+Disallow: /thank-you/
